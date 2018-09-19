@@ -72,6 +72,19 @@ button {
     color: #ffffff;
     background: #121a2e;
 }
+.cta-rock {
+    color: #ffffff;
+    background: rgb(31,162,190);
+}
+.cta-rock:hover {
+    color: #fff;
+}
+.parceiros:hover {
+    -webkit-filter: grayscale(0%);
+}
+.parceiros {
+    -webkit-filter: grayscale(100%);
+}
 
 #banner {
     background-size: cover;
@@ -93,11 +106,11 @@ button {
 }
 
 #feature-first {
-    background: linear-gradient(168deg, #ffffff 55%, #0052cc 0);
+    background: linear-gradient(168deg, #ffffff 55%, #4967a9 0);
 }
 
 #feature-last {
-    background: #0052cc;
+    background: #4967a9;
 }
 
 /********** price table **********/
