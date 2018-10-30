@@ -23,8 +23,37 @@ button {
     cursor: pointer;
 }
 
+table#features td,
+table#features th {
+    text-align: center;
+}
+
+table#features td img {
+    margin: auto;
+}
+
+table#features tr td:first-child {
+    text-align: left;
+}
+
 .jumbotron {
     margin-bottom: 0 !important;
+}
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0,0,0,.02) !important;
+}
+.table td, .table th {
+    border-top: none !important;
+}
+
+.btn-outline-primary {
+    color: rgb(31,162,190) !important;
+    border-color: rgb(31,162,190) !important;
+}
+
+.btn-outline-primary:hover {
+    color: #fff !important;
+    background-color: rgb(31,162,190) !important;
 }
 
 .atlas-cta {
