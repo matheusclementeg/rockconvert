@@ -46,14 +46,11 @@
     <!-- banner -->
     <div class="jumbotron jumbotron-fluid" id="banner" style="position: relative">
     <div  style="background-image: url(img/banner-bk.jpg);position: absolute;width: 100%;height: 100%;top: 0;background-size: cover;filter: brightness(30%);" class="cover"></div>
-        <div class="container text-center text-md-left">
+        <div class="container text-center">
             <header>
               <div class="row justify-content-between">
     <div class="col-3" style="padding-top: 10px">
         <img src="img/logo.png" alt="logo" style="margin: auto;float: left;">
-    </div>
-    <div class="col-6 align-self-center text-right">
-        <a href="https://wordpress.org/plugins/rock-convert/" data-ga-cta data-ga-action="Click" data-ga-label="Testar Gratuitamente" data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true" class="btn my-4 font-weight-bold atlas-cta cta-rock aos-init aos-animate" id="botmenu">TESTAR GRATUITAMENTE</a>
     </div>
 </div>
             </header>
@@ -64,7 +61,19 @@
                 Empresas que usam o Rock Convert para <strong>gerenciar banners</strong> possuem um aumento de até <strong>132%</strong> nas conversões do site. <br><strong>Baixe gratuitamente</strong>, gere mais leads e aumente suas vendas.<br>
 
             </p>
-            <a href="https://wordpress.org/plugins/rock-convert/" data-ga-cta data-ga-action="Click" data-ga-label="Comecar Agora" data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true" class="btn my-4 font-weight-bold atlas-cta cta-rock">Começar Agora</a>
+            <form action="https://www.rdstation.com.br/api/1.2/conversions" method="POST">
+                <input type="hidden" name="token_rdstation" value="e58085419f764dbdaf17ac942334b0fc" />
+                <input type="hidden" name="identificador" value="rock-convert" />
+                <input type="hidden" name="redirect_to" value="https://wordpress.org/plugins/rock-convert/" />
+                <div class="row justify-content-center pt-3">
+                    <div class="form-group col-md-5">
+                        <input required style="height: 50px" name="email" type="email" class="form-control" id="Email" placeholder="Digite seu e-mail">
+                    </div>
+                    <div class="form-group col-md-3">
+                    <button type="submit" data-ga-cta data-ga-action="Click" data-ga-label="Comecar Agora" data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true" class="btn font-weight-bold atlas-cta atlas-cta-wide cta-rock">Começar Agora</button>
+                </div>
+            </div>
+            </form>
         </div>
     </div>
 
