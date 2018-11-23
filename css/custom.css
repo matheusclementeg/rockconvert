@@ -36,9 +36,20 @@ table#features tr td:first-child {
     text-align: left;
 }
 
+html, body {
+    height: 100%;
+}
+
 .jumbotron {
     margin-bottom: 0 !important;
 }
+.jumbotron.text-center {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .table-striped tbody tr:nth-of-type(odd) {
     background-color: rgba(0,0,0,.02) !important;
 }
