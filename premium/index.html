@@ -62,7 +62,6 @@
                             class="btn my-4 font-weight-bold atlas-cta cta-rock aos-init aos-animate" id="botmenu">ASSINAR PREMIUM</a>
                     </div>
                 </div>
-                
             </header>
             <h1 data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true" class="display-3 text-white font-weight-bold my-5"
                 style="font-size:49px;font-weight:100 !important">
@@ -186,41 +185,6 @@
     <!-- client -->
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <!-- Load Stripe.js on your website. -->
-<script src="https://js.stripe.com/v3"></script>
-
-<!-- Create a button that your customers click to complete their purchase. -->
-<button id="checkout-button" role="link">Pay</button>
-<div id="error-message"></div>
-
-<script>
-  var stripe = Stripe('pk_live_xoFBS8aL9qFNLcItHB2UMfeN', {
-    betas: ['checkout_beta_4']
-  });
-
-  var checkoutButton = document.getElementById('checkout-button');
-  checkoutButton.addEventListener('click', function () {
-    // When the customer clicks on the button, redirect
-    // them to Checkout.
-    stripe.redirectToCheckout({
-      items: [{plan: 'plan_EWU90MZAOx4vYP', quantity: 1}],
-
-      // Note that it is not guaranteed your customers will be redirected to this
-      // URL 100% of the time, it's possible that they could e.g. close the
-      // tab between form submission and the redirect.
-      successUrl: 'https://rockstage.io/success',
-      cancelUrl: 'https://rockstage.io/canceled',
-    })
-    .then(function (result) {
-      if (result.error) {
-        // If redirectToCheckout fails due to a browser or network
-        // error, display the localized error message to your customer.
-        var displayError = document.getElementById('error-message');
-        displayError.textContent = result.error.message;
-      }
-    });
-  });
-</script>
             <h2 class="text-center font-weight-bold my-5">Junte-se a mais de 1000 empresas que<br> usam o Rock Convert
                 diariamente</h2>
             <p class="text-center my-5">Comece agora e aumente as conversões do seu site:</p>
