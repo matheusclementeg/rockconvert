@@ -199,7 +199,7 @@
 <div id="error-message"></div>
 
 <script>
- var stripe = Stripe('pk_live_xoFBS8aL9qFNLcItHB2UMfeN', {
+ var stripe = Stripe('pk_live_JV83krzF5LdHX9Ib3AWrRpqR', {
    betas: ['checkout_beta_4']
  });
 
@@ -208,13 +208,13 @@
    // When the customer clicks on the button, redirect
    // them to Checkout.
    stripe.redirectToCheckout({
-     items: [{plan: 'plan_EWW094iZ2KmZzb', quantity: 1}],
+     items: [{plan: 'plan_DiUQR0hPxB1aBJ', quantity: 1}],
 
      // Note that it is not guaranteed your customers will be redirected to this
      // URL *100%* of the time, it's possible that they could e.g. close the
      // tab between form submission and the redirect.
-     successUrl: 'https://rockstage.io/success',
-     cancelUrl: 'https://rockstage.io/canceled',
+     successUrl: 'https://rockcontent.com/success',
+     cancelUrl: 'https://rockcontent.com/canceled',
    })
    .then(function (result) {
      if (result.error) {
