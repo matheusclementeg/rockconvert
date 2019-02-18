@@ -1,254 +1,996 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta charset="utf-8">
-    <meta name="language" content="pt-BR">
-    <title>Rock Convert - Plugin Gerenciador de banners para Wordpress</title>
-    <meta name="description" content="Cansado de criar CTAs em todos os posts do wordpress manualmente? O Plugin para Wordpress Rock Convert faz isso para você.">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rock Convert - Plugin de conversão para Wordpress</title>
+    <meta name="description" content="Quer transformar o seu WordPress em uma máquina de conversão? O Rock Convert faz isso para você.">
     <meta name="robots" content="all">
     <meta name="author" content="Rock Content">
-    <meta name="keywords" content="">
+    <meta name="keywords" content="plugin wordpress, plugin de conversao">
 
     <meta property="og:type" content="page">
     <meta property="og:title" content="Rock Convert - Gerenciador de banners para Wordpress">
     <meta property="og:url" content="https://convert.rockcontent.com">
-    <meta property="og:image" content="https://convert.rockcontent.com/img/banner-bk.jpg">
+    <meta property="og:image" content="https://convert.rockcontent.com/dist/images/banner-convert.png">
     <meta property="article:author" content="rockcontent">
 
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@rockcontent">
     <meta name="twitter:creator" content="@rockcontent">
-	<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-T8J6Q6Q');</script>
     <!-- End Google Tag Manager -->
-    <link rel="icon" href="img/favicon.png" sizes="32x32" type="image/png">
-    <!-- custom.css -->
-    <link rel="stylesheet" href="css/custom.css">
-    <!--boostrap 4 -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	<!-- font-awesome -->
-    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
-    <!-- AOS -->
-    <link rel="stylesheet" href="css/aos.css">
-</head>
 
-<body>
+    <link rel="icon" href="dist/images/favicon.png" sizes="32x32" type="image/png">
+    <link href="https://fonts.googleapis.com/css?family=Heebo:400,500,700|Fira+Sans:600" rel="stylesheet" />
+    <link rel="stylesheet" href="dist/css/style.css" />
+    <script src="https://unpkg.com/animejs@2.2.0/anime.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+  </head>
 
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T8J6Q6Q"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) --> 
-    <!-- banner -->
-    <div class="jumbotron jumbotron-fluid" id="banner" style="position: relative">
-    <div  style="background-image: url(img/banner-bk.jpg);position: absolute;width: 100%;height: 100%;top: 0;background-size: cover;filter: brightness(30%);" class="cover"></div>
-        <div class="container text-center">
-            <header>
-              <div class="row justify-content-between">
-    <div class="col-3" style="padding-top: 10px">
-        <img src="img/logo.png" alt="logo" style="margin: auto;float: left;">
-    </div>
-</div>
-            </header>
-            <h1 data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true" class="display-3 text-white font-weight-bold my-5" style="font-size:49px;font-weight:100 !important">Quanto dinheiro você perdeu <strong>hoje</strong><br>
-                porque ninguém converte no seu site?
-            </h1>
-            <p data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true" class="lead text-white my-4" style="font-weight:100 !important">
-                Empresas que usam o Rock Convert para <strong>gerenciar banners</strong> possuem um aumento de até <strong>132%</strong> nas conversões do site. <br><strong>Baixe gratuitamente</strong>, gere mais leads e aumente suas vendas.<br>
+  <body class="is-boxed has-animations">
+    <div class="body-wrap boxed-container">
+      <header class="site-header">
+        <div class="header-shape header-shape-1">
+          <svg width="337" height="222" viewBox="0 0 337 222" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient x1="50%" y1="55.434%" x2="50%" y2="0%" id="header-shape-1">
+                <stop stop-color="#E0E1FE" stop-opacity="0" offset="0%" />
+                <stop stop-color="#E0E1FE" offset="100%" />
+              </linearGradient>
+            </defs>
+            <path d="M1103.21 0H1440v400h-400c145.927-118.557 166.997-251.89 63.21-400z" transform="translate(-1103)" fill="url(#header-shape-1)" fill-rule="evenodd" />
+          </svg>
+        </div>
+        <div class="header-shape header-shape-2">
+          <svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" style="overflow:visible">
+            <defs>
+              <linearGradient x1="93.05%" y1="19.767%" x2="15.034%" y2="85.765%" id="header-shape-2">
+                <stop stop-color="#FF3058" offset="0%" />
+                <stop stop-color="#FF6381" offset="100%" />
+              </linearGradient>
+            </defs>
+            <circle class="anime-element fadeup-animation" cx="64" cy="64" r="64" fill="url(#header-shape-2)" fill-rule="evenodd" />
+          </svg>
+        </div>
+        <div class="container">
+          <div class="site-header-inner">
+            <div class="brand header-brand">
+              <h1 class="m-0">
+                <a href="/">
+                  <svg fill="#5B6A87" height="42" viewBox="0 0 949 201" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M317.809 153.667c-30.231 0-44.226-17.167-44.226-48.703V90.381c0-32.097 13.995-48.518 44.226-48.518 16.048 0 27.617 2.426 32.469 3.918v18.662c-13.25-1.12-22.392-1.68-28.177-1.68-15.302 0-23.886 4.852-23.886 27.618v14.583c0 22.577 8.584 27.804 23.886 27.804 5.785 0 14.928-.56 28.177-1.68v18.66c-4.852 1.307-16.421 3.919-32.47 3.919M653.617 153.667h-34.895L586.066 44.609h25.751l17.168 63.899c2.8 9.89 5.04 19.593 7.465 28.552 2.24-8.959 4.292-18.475 7.09-28.552l16.982-63.899h25.751l-32.656 109.058zM765.466 88.355c0-12.129-2.425-25.378-22.765-25.378-19.78 0-22.766 13.436-22.766 25.378v1.68h45.531v-1.68zm-45.717 17.728v1.864c0 15.303 2.24 25.194 27.99 25.194 11.01 0 24.072-1.12 37.88-2.427v18.473c-7.837 1.867-21.458 4.48-39 4.48-37.88 0-51.316-14.556-51.316-51.504v-6.53c0-35.268 16.048-52.436 47.398-52.436 35.081 0 47.398 22.766 47.398 54.674v8.212h-70.35zM117.128 150.475h-21.13V77.229h21.13zM74.867 103.897v46.585h-9.612c-6.36 0-11.527-5.108-11.527-11.417v-23.751c0-6.301 5.167-11.417 11.527-11.417h9.612zM138.375 50.563v99.919h9.612c6.36 0 11.527-5.108 11.527-11.417V61.98c0-6.302-5.167-11.418-11.527-11.418h-9.612z" />
+                    <path d="M130.044 179.21c-24.084 0 0 .088 0 .088H84.466s24.086-.088 0-.088c-57.381 0-57.212-34.466-57.212-78.756 0-44.292-.17-78.946 57.212-78.946h45.578c57.382 0 57.213 34.654 57.213 78.946 0 44.29.17 78.756-57.213 78.756M134.068.334H80.613C27.254.334.71 33.118.71 100.454c0 67.336 26.544 99.88 79.903 99.88h53.455c53.358 0 79.902-32.544 79.902-99.88S187.426.334 134.068.334M927.25 153.635c-20.712 0-28.923-8.274-28.923-30.458V64.895l-19.594-1.69V44.966h19.594V4.333h24.631v40.634h25.565v19.928h-25.565V122.8c0 9.778.747 11.656 9.705 11.656 5.411 0 12.875-.376 15.86-.752v16.922c-2.8.752-11.942 3.008-21.273 3.008M834.512 71.475v82.006h-24.446V44.967h23.326v8.647c9.889-8.835 22.765-11.279 35.828-11.279V65.084c-12.688 0-26.684 2.631-34.708 6.391M552.204 153.48V83.696c0-15.228-2.613-20.49-14.742-20.49-7.091 0-16.422 2.632-27.618 7.142v83.134H485.4V44.967h23.512v8.46c11.383-6.581 22.765-11.092 34.523-11.092 29.67 0 33.588 17.296 33.588 41.36v69.786h-24.818zM440.92 91.321c0-20.343-6.907-27.877-22.96-27.877-15.867 0-22.96 7.534-22.96 27.877v12.996c0 20.343 6.906 28.065 22.96 28.065 16.053 0 22.96-7.722 22.96-28.065V91.321zm-22.96 62.345c-30.614 0-47.414-15.821-47.414-49.349V91.321c0-33.34 16.8-49.163 47.413-49.163 30.614 0 47.414 15.823 47.414 49.163v12.996c0 33.528-16.8 49.35-47.414 49.35z" />
+                  </svg>
+                </a>
+              </h1>
+            </div>
+          </div>
+        </div>
+      </header>
 
-            </p>
-            <form action="https://www.rdstation.com.br/api/1.2/conversions" method="POST">
+      <main>
+        <section class="hero">
+          <div class="container">
+            <div class="hero-inner">
+              <div class="hero-copy">
+                <h1 class="hero-title mt-0">
+                  Quantas oportunidades você perdeu <strong class="color-secondary">hoje</strong>
+                  porque ninguém converte no seu site?
+                </h1>
+                <p class="hero-paragraph">
+                  Aumente gratuitamente as conversões do seu <strong>WordPress</strong>
+                  em até 150%.
+                </p>
+                <form action="https://www.rdstation.com.br/api/1.2/conversions" method="POST"
+                  class="hero-form field field-grouped">
+                  <input type="hidden" name="token_rdstation" value="e58085419f764dbdaf17ac942334b0fc" />
+                  <input type="hidden" name="identificador" value="rock-convert" />
+                  <input type="hidden" name="redirect_to" value="https://wordpress.org/plugins/rock-convert/" />
+                  <div class="control control-expanded">
+                    <input class="input" type="email" name="email" required
+                      placeholder="Digite seu email" />
+                  </div>
+                  <div class="control">
+                    <button data-ga-cta data-ga-action="Click" data-ga-label="Comecar Agora"
+                      class="button button-primary">
+                      Começar gratuitamente
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <div class="hero-illustration">
+                <div class="hero-shape hero-shape-1">
+                  <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg" style="overflow:visible">
+                    <circle class="anime-element fadeup-animation" cx="20" cy="20" r="20" fill="#FFD8CD" fill-rule="evenodd" />
+                  </svg>
+                </div>
+                <div class="hero-shape hero-shape-2">
+                  <svg width="88" height="88" xmlns="http://www.w3.org/2000/svg" style="overflow:visible">
+                    <circle class="anime-element fadeup-animation" cx="44" cy="44" r="44" fill="#FFD2DA" fill-rule="evenodd" />
+                  </svg>
+                </div>
+                <div class="hero-main-shape">
+                  <svg width="940" height="647" viewBox="0 0 940 647" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="overflow:visible">
+                    <defs>
+                      <linearGradient x1="89.764%" y1="16.809%" x2="11.987%" y2="82.178%" id="hero-illustration-b">
+                        <stop stop-color="#FC8464" offset="0%" />
+                        <stop stop-color="#FB5C32" offset="100%" />
+                      </linearGradient>
+                      <linearGradient x1="100%" y1="23.096%" x2="4.439%" y2="96.586%" id="hero-illustration-c">
+                        <stop stop-color="#1ADAB7" offset="0%" />
+                        <stop stop-color="#55EBD0" offset="100%" />
+                      </linearGradient>
+                      <filter x="-13%" y="-150%" width="126.1%" height="400%" filterUnits="objectBoundingBox" id="hero-illustration-d">
+                        <feGaussianBlur stdDeviation="32" in="SourceGraphic" />
+                      </filter>
+                      <linearGradient x1="0%" y1="100%" x2="46.694%" y2="42.915%" id="hero-illustration-f">
+                        <stop stop-color="#EEF1FA" offset="0%" />
+                        <stop stop-color="#FFF" offset="100%" />
+                      </linearGradient>
+                      <rect id="hero-illustration-e" width="800" height="450" rx="4" />
+                      <linearGradient x1="100%" y1="-12.816%" x2="0%" y2="-12.816%" id="hero-illustration-g">
+                        <stop stop-color="#D2DAF0" stop-opacity="0" offset="0%" />
+                        <stop stop-color="#D2DAF0" offset="50.045%" />
+                        <stop stop-color="#D2DAF0" stop-opacity="0" offset="100%" />
+                      </linearGradient>
+                      <linearGradient x1="116.514%" y1="-21.201%" x2="0%" y2="100%" id="hero-illustration-h">
+                        <stop stop-color="#55EBD0" offset="0%" />
+                        <stop stop-color="#4950F6" offset="100%" />
+                      </linearGradient>
+                      <path id="hero-illustration-j" d="M0 0h308v288H0z" />
+                      <filter x="-15.6%" y="-12.5%" width="139%" height="141.7%" filterUnits="objectBoundingBox" id="hero-illustration-i">
+                        <feOffset dx="12" dy="24" in="SourceAlpha" result="shadowOffsetOuter1" />
+                        <feGaussianBlur stdDeviation="16" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
+                        <feColorMatrix values="0 0 0 0 0.0666666667 0 0 0 0 0.062745098 0 0 0 0 0.243137255 0 0 0 0.08 0" in="shadowBlurOuter1" />
+                      </filter>
+                      <circle id="hero-illustration-k" cx="16" cy="16" r="16" />
+                      <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="hero-illustration-m">
+                        <stop stop-color="#C6FDF3" offset="0%" />
+                        <stop stop-color="#C6FDF3" stop-opacity="0" offset="100%" />
+                      </linearGradient>
+                      <linearGradient x1="2.875%" y1="89.028%" x2="99.412%" y2="6.885%" id="hero-illustration-n">
+                        <stop stop-color="#83F0DD" offset="0%" />
+                        <stop stop-color="#1ADAB7" offset="50.924%" />
+                        <stop stop-color="#55EBD0" offset="100%" />
+                      </linearGradient>
+                      <linearGradient x1="50%" y1="1.569%" x2="50%" y2="97.315%" id="hero-illustration-o">
+                        <stop stop-color="#FF97AA" offset="0%" />
+                        <stop stop-color="#FF6381" offset="100%" />
+                      </linearGradient>
+                      <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="hero-illustration-p">
+                        <stop stop-color="#FCAC96" offset="0%" />
+                        <stop stop-color="#FC8464" offset="100%" />
+                      </linearGradient>
+                      <filter x="-85.7%" y="-64.3%" width="314.3%" height="314.3%" filterUnits="objectBoundingBox" id="hero-illustration-q">
+                        <feOffset dx="12" dy="24" in="SourceAlpha" result="shadowOffsetOuter1" />
+                        <feGaussianBlur stdDeviation="16" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
+                        <feColorMatrix values="0 0 0 0 0.0666666667 0 0 0 0 0.062745098 0 0 0 0 0.243137255 0 0 0 0.08 0" in="shadowBlurOuter1" />
+                      </filter>
+                      <filter x="-66.7%" y="-50%" width="266.7%" height="266.7%" filterUnits="objectBoundingBox" id="hero-illustration-s">
+                        <feOffset dx="12" dy="24" in="SourceAlpha" result="shadowOffsetOuter1" />
+                        <feGaussianBlur stdDeviation="16" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
+                        <feColorMatrix values="0 0 0 0 0.0666666667 0 0 0 0 0.062745098 0 0 0 0 0.243137255 0 0 0 0.08 0" in="shadowBlurOuter1" />
+                      </filter>
+                      <filter x="-66.7%" y="-50%" width="266.7%" height="266.7%" filterUnits="objectBoundingBox" id="hero-illustration-s2">
+                        <feOffset dx="12" dy="24" in="SourceAlpha" result="shadowOffsetOuter1" />
+                        <feGaussianBlur stdDeviation="16" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
+                        <feColorMatrix values="0 0 0 0 0.0666666667 0 0 0 0 0.062745098 0 0 0 0 0.243137255 0 0 0 0.08 0" in="shadowBlurOuter1" />
+                      </filter>
+                      <filter x="-85.7%" y="-64.3%" width="314.3%" height="314.3%" filterUnits="objectBoundingBox" id="hero-illustration-u">
+                        <feOffset dx="12" dy="24" in="SourceAlpha" result="shadowOffsetOuter1" />
+                        <feGaussianBlur stdDeviation="16" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
+                        <feColorMatrix values="0 0 0 0 0.0666666667 0 0 0 0 0.062745098 0 0 0 0 0.243137255 0 0 0 0.08 0" in="shadowBlurOuter1" />
+                      </filter>
+                      <filter x="-100%" y="-75%" width="350%" height="350%" filterUnits="objectBoundingBox" id="hero-illustration-w">
+                        <feOffset dx="12" dy="24" in="SourceAlpha" result="shadowOffsetOuter1" />
+                        <feGaussianBlur stdDeviation="16" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
+                        <feColorMatrix values="0 0 0 0 0.0666666667 0 0 0 0 0.062745098 0 0 0 0 0.243137255 0 0 0 0.08 0" in="shadowBlurOuter1" />
+                      </filter>
+                    </defs>
+                    <g fill="none" fill-rule="evenodd">
+                      <path stroke="#4950F6" fill="rgba(224,225,254,0.7)" class="anime-element stroke-animation" d="M600,300 C600,465.685425 465.685425,600 300,600 C134.314575,600 1.3749042e-14,465.685425 3.60373576e-15,300 C-6.54157051e-15,134.314575 134.314575,-1.29473326e-14 300,-2.30926389e-14 C465.685425,-3.32379452e-14 600,134.314575 600,300 Z" />
+                      <g transform="translate(435 518)">
+                        <circle class="anime-element fadeup-animation" fill="url(#hero-illustration-b)" cx="106" cy="32" r="32" />
+                        <circle class="anime-element fadeup-animation" fill="url(#hero-illustration-c)" cx="12" cy="117" r="12" />
+                      </g>
+                      <g class="anime-element fadeleft-animation">
+                        <g transform="translate(103 75)">
+                          <path fill-opacity=".24" fill="#11103E" filter="url(#hero-illustration-d)" d="M32 410h736v64H32z" />
+                          <use fill="url(#hero-illustration-f)" xlink:href="#hero-illustration-e" />
+                        </g>
+                        <g transform="translate(123 87)">
+                          <circle fill="#D2DAF0" cx="4" cy="4" r="4" />
+                          <circle fill="#D2DAF0" cx="20" cy="4" r="4" />
+                          <circle fill="#D2DAF0" cx="36" cy="4" r="4" />
+                          <path fill-opacity=".56" fill="#FFF" d="M736 2h24v4h-24z" />
+                          <path fill="url(#hero-illustration-g)" d="M27 20h706v2H27z" />
+                        </g>
+                        <g transform="translate(396 157)">
+                          <path fill="#FFF" d="M0 0h308v144H0z" />
+                          <path fill="#EEF1FA" d="M28 119h252v1H28zM28 94h252v1H28zM28 69h252v1H28zM28 44h252v1H28z" />
+                          <rect fill="#D2DAF0" x="28" y="20" width="24" height="8" rx="4" />
+                          <linearGradient x1="50%" y1="-20.135%" x2="50%" y2="114.879%" id="jum-graph1">
+                            <stop stop-color="#B8BAFF" offset="0%" />
+                            <stop stop-color="#FFF" stop-opacity="0" offset="100%" />
+                          </linearGradient>
+                          <linearGradient x1="2.875%" y1="72.668%" x2="99.412%" y2="24.958%" id="jum-graph2">
+                            <stop stop-color="#4145E8" offset="0%" />
+                            <stop stop-color="#3E41E3" offset="50.924%" />
+                            <stop stop-color="#2E2AC5" offset="100%" />
+                          </linearGradient>
+                          <g transform="translate(28 50)">
+                            <path fill="url(#jum-graph1)" d="M252 9.53V72H0V51.152l2.486-2.349 8.822-4.88 7.108-1.635h7.565l17.343 6.515 8.061 2.01 5.407-2.01 7.072-7.42 5.62-3.948 6.458-.935 8.923 3.75 11.369 9.767 9.154 3.675h4.657l5.984-2.028 5.883-5.792 4.81-8.437 8.815-13.387 6.823-8.67 7.563-7.626 7.85-4.353L170.377 1l5.205.925 12.223 4.8 8.617 5.048 10.775 7.626 10.114 4.649 10.437 2.315 6.845-.953 7.33-3.317 8.332-9.505z" />
+                            <path fill="url(#jum-graph2)" d="M252 5.686v5.54c-10.812 20.186-29.693 20.77-55.642 1.683C181.258 1.8 168.752-.55 157.856 4.193c-8.734 3.802-16.03 11.668-24.007 24.295-2.123 3.36-8.498 14.174-9.111 15.175-9.244 15.078-22.146 15.078-37.33.226-9.956-8.516-17.579-8.516-23.907-.154-2.942 3.886-5.623 6.187-8.47 7.25-3.009 1.122-6.055.88-10.068-.512-1.977-.684-10.235-4.24-12.125-4.976a96.324 96.324 0 0 0-3.752-1.377C19.339 40.778 9.699 43.543 0 52.632V49.75c9.77-8.343 19.845-10.85 30.093-7.337 1.285.44 2.56.91 3.862 1.417 1.976.77 10.165 4.296 12.024 4.94 3.41 1.182 5.738 1.367 7.973.533 2.32-.865 4.703-2.912 7.422-6.505 7.235-9.556 16.873-9.556 27.92-.107 14.19 13.878 24.821 13.878 33.22.18.6-.981 6.984-11.809 9.123-15.196 8.18-12.95 15.704-21.06 25.001-25.108 11.96-5.205 25.608-2.64 41.425 8.995C224.737 31.183 242.3 29.25 252 5.686z" />
+                          </g>
+                        </g>
+                        <g>
+                          <path fill="#FFF" d="M396 333h308v144H396z" />
+                          <path fill="#EEF1FA" d="M424 452h252v1H424zM424 427h252v1H424zM424 402h252v1H424zM424 377h252v1H424z" />
+                          <path fill="url(#hero-illustration-o)" d="M28 24h12v96H28z" transform="translate(396 333)" />
+                          <path fill="url(#hero-illustration-p)" d="M52 67h12v53H52z" transform="translate(396 333)" />
+                          <path fill="url(#hero-illustration-o)" d="M76 24h12v96H76z" transform="translate(396 333)" />
+                          <path fill="url(#hero-illustration-p)" d="M100 82h12v38h-12z" transform="translate(396 333)" />
+                          <path fill="url(#hero-illustration-o)" d="M124 45h12v75h-12z" transform="translate(396 333)" />
+                          <path fill="url(#hero-illustration-p)" d="M148 67h12v53h-12z" transform="translate(396 333)" />
+                          <path fill="url(#hero-illustration-o)" d="M172 82h12v38h-12z" transform="translate(396 333)" />
+                          <path fill="url(#hero-illustration-p)" d="M196 45h12v75h-12z" transform="translate(396 333)" />
+                          <path fill="url(#hero-illustration-o)" d="M220 67h12v53h-12z" transform="translate(396 333)" />
+                          <path fill="url(#hero-illustration-p)" d="M244 82h12v38h-12z" transform="translate(396 333)" />
+                          <path fill="url(#hero-illustration-o)" d="M268 45h12v75h-12z" transform="translate(396 333)" />
+                        </g>
+                      </g>
+                      <g class="anime-element fadeleft-animation">
+                        <g transform="translate(56 157)">
+                          <use fill="#000" filter="url(#hero-illustration-i)" xlink:href="#hero-illustration-j" />
+                          <linearGradient x1="100%" y1="49.195%" x2="4.439%" y2="51.394%" id="bannergradient">
+                            <stop stop-color="#55EBD0" offset="0%" />
+                            <stop stop-color="#08D2AD" offset="100%" />
+                          </linearGradient>
+                          <g fill-rule="nonzero" fill="none">
+                            <path d="M0 0h308v288H0z" fill="#FFF" />
+                            <path fill="#EEF1FA" d="M12 44h284v81H12z" />
+                            <rect fill="#D2DAF0" x="236" y="18" width="24" height="8" rx="4" />
+                            <g transform="translate(61 145)">
+                              <rect fill="#D2DAF0" width="114" height="8" rx="4" />
+                              <rect fill="#D2DAF0" x="71" y="114" width="114" height="8" rx="4" />
+                              <rect fill="#D2DAF0" y="36" width="34" height="8" rx="4" />
+                              <rect fill="#D2DAF0" x="162" y="36" width="23" height="8" rx="4" />
+                              <rect fill="#D2DAF0" x="71" y="18" width="114" height="8" rx="4" />
+                              <rect fill="#D2DAF0" y="96" width="114" height="8" rx="4" />
+                              <rect fill="#D2DAF0" x="121" width="64" height="8" rx="4" />
+                              <rect fill="#D2DAF0" y="114" width="64" height="8" rx="4" />
+                              <rect fill="#D2DAF0" x="41" y="36" width="114" height="8" rx="4" />
+                              <rect fill="url(#bannergradient)" y="54" width="185" height="32" rx="4" />
+                              <rect fill="#D2DAF0" y="18" width="64" height="8" rx="4" />
+                              <rect fill="#D2DAF0" x="121" y="96" width="64" height="8" rx="4" />
+                            </g>
+                            <rect fill="#D2DAF0" x="48" y="18" width="24" height="8" rx="4" />
+                            <rect fill="#D2DAF0" x="12" y="10" width="24" height="24" rx="12" />
+                            <rect fill="#D2DAF0" x="272" y="18" width="24" height="8" rx="4" />
+                          </g>
+                        </g>
+                      </g>
+                      <g class="anime-element fadeleft-animation">
+                        <g class="anime-element fadeleft-animation">
+                          <g transform="translate(100 410)">
+                            <circle fill="#fff" cx="100" cy="100" r="50" />
+                            <g fill="#364A65" transform="translate(62 94)">
+                              <path d="M0 .269A26.992 26.992 0 0 1 3.988 0c1.965 0 3.34.287 4.283 1.014.785.613 1.218 1.513 1.218 2.7 0 1.646-1.199 2.775-2.338 3.177v.058c.924.364 1.435 1.226 1.768 2.413.413 1.454.826 3.14 1.081 3.637H6.935c-.216-.364-.53-1.417-.924-3.006-.353-1.608-.923-2.048-2.14-2.067h-.905V13H0V.269zM2.966 5.82h1.179c1.493 0 2.377-.727 2.377-1.857 0-1.187-.825-1.78-2.2-1.8a7.663 7.663 0 0 0-1.356.097v3.56zM11 .266a24.469 24.469 0 0 1 3.802-.265c2.363 0 3.894.436 5.094 1.364C21.188 2.35 22 3.923 22 6.178c0 2.444-.867 4.13-2.067 5.173-1.31 1.117-3.304 1.648-5.74 1.648A23.73 23.73 0 0 1 11 12.81V.267zm2.824 10.422c.24.057.627.057.978.057 2.547.019 4.208-1.421 4.208-4.472.019-2.653-1.495-4.055-3.913-4.055a5.702 5.702 0 0 0-1.273.114v8.356z" />
+                              <path d="M25.432 10.83c.924.53 1.98.814 3.058.823 1.746 0 2.765-.879 2.765-2.15 0-1.18-.706-1.853-2.49-2.507-2.157-.73-3.49-1.796-3.49-3.573C25.275 1.459 26.98 0 29.549 0c1.353 0 2.333.3 2.922.617L32 1.945a5.467 5.467 0 0 0-2.51-.598c-1.804 0-2.49 1.029-2.49 1.889 0 1.178.804 1.758 2.628 2.432C31.863 6.49 33 7.519 33 9.37 33 11.317 31.49 13 28.372 13c-1.274 0-2.666-.355-3.372-.804l.432-1.366zM36.805 2v2.017H39v1.218h-2.195v4.746c0 1.091.296 1.71 1.15 1.71.3.004.598-.032.888-.11l.07 1.2c-.296.128-.767.219-1.359.219-.714 0-1.29-.236-1.655-.673-.436-.473-.592-1.255-.592-2.291v-4.8H34v-1.22h1.307V2.419L36.805 2zM50.805 2v2.017H53v1.218h-2.195v4.746c0 1.091.296 1.71 1.15 1.71.3.004.598-.032.888-.11l.07 1.2c-.296.128-.767.219-1.359.219-.714 0-1.29-.236-1.655-.673-.436-.473-.592-1.255-.592-2.291v-4.8H48v-1.22h1.307V2.419L50.805 2z" />
+                              <path d="M45.549 12.804l-.127-1.085h-.054c-.49.676-1.433 1.281-2.684 1.281C40.907 13 40 11.773 40 10.527c0-2.08 1.886-3.219 5.277-3.201v-.178c0-.711-.2-1.992-1.995-1.992a4.436 4.436 0 0 0-2.285.64l-.362-1.031C41.36 4.302 42.412 4 43.518 4c2.684 0 3.337 1.797 3.337 3.522v3.22c-.012.69.037 1.38.145 2.063h-1.451zm-.236-4.393c-1.74-.036-3.717.267-3.717 1.939 0 1.014.689 1.494 1.505 1.494 1.143 0 1.868-.712 2.122-1.441.056-.16.087-.328.09-.498V8.41zM56 1.06c.018.577-.386 1.04-1.028 1.04a.937.937 0 0 1-.697-.302A1.036 1.036 0 0 1 54 1.06a1.06 1.06 0 0 1 .288-.758c.19-.2.452-.309.721-.302.605 0 .99.463.99 1.06zM54.201 13V3.679h1.614V13h-1.614zM66 8.429C66 11.613 63.64 13 61.415 13 58.922 13 57 11.292 57 8.571 57 5.69 59.017 4 61.566 4 64.211 4 66 5.796 66 8.429zm-4.51 3.397c1.599 0 2.797-1.405 2.797-3.344 0-1.458-.78-3.308-2.759-3.308-1.979 0-2.835 1.707-2.835 3.344 0 1.885 1.16 3.308 2.797 3.308z" />
+                              <path d="M67.077 6.582c0-.91-.02-1.655-.077-2.382h1.5l.096 1.455h.039C69.096 4.818 70.173 4 71.712 4 73 4 75 4.727 75 7.745V13h-1.693V7.927c0-1.418-.557-2.6-2.153-2.6-1.116 0-1.981.746-2.27 1.637-.081.24-.12.492-.115.745V13h-1.692V6.582z" />
+                            </g>
+                          </g>
+                        </g>
+                        <g class="anime-element fadeleft-animation">
+                          <g transform="translate(190 40)">
+                            <use fill="#000" filter="url(#hero-illustration-s2)" xlink:href="#hero-illustration-t2" />
+                            <use fill="#FFF" xlink:href="#hero-illustration-t2" />
+                            <circle id="hero-illustration-t2" cx="36" cy="36" r="36" />
+                            <g fill="#32373C" transform="translate(14 14)">
+                              <path d="M22.5 0C10.074 0 0 10.074 0 22.5S10.074 45 22.5 45 45 34.926 45 22.5 34.926 0 22.5 0m0 1.35a21.015 21.015 0 0 1 11.824 3.611 21.301 21.301 0 0 1 5.715 5.715A21.015 21.015 0 0 1 43.65 22.5a21.015 21.015 0 0 1-3.611 11.824 21.301 21.301 0 0 1-5.715 5.715A21.015 21.015 0 0 1 22.5 43.65a21.014 21.014 0 0 1-11.824-3.611 21.301 21.301 0 0 1-5.715-5.715A21.015 21.015 0 0 1 1.35 22.5a21.015 21.015 0 0 1 3.611-11.824 21.301 21.301 0 0 1 5.715-5.715A21.014 21.014 0 0 1 22.5 1.35" />
+                              <path d="M38.542 13.73c.079.582.123 1.206.123 1.88 0 1.853-.347 3.939-1.39 6.547L31.69 38.3c5.435-3.168 9.09-9.056 9.09-15.8 0-3.179-.812-6.167-2.239-8.77zm-15.72 10.368l-5.487 15.938a18.274 18.274 0 0 0 11.236-.291 1.654 1.654 0 0 1-.131-.252l-5.619-15.395zm12.02-2.52c0-2.26-.812-3.825-1.508-5.042-.926-1.507-1.795-2.781-1.795-4.288 0-1.68 1.274-3.244 3.07-3.244.08 0 .157.01.236.014a18.213 18.213 0 0 0-12.345-4.8c-6.387 0-12.005 3.278-15.275 8.24.43.014.834.023 1.177.023 1.912 0 4.873-.233 4.873-.233.984-.058 1.101 1.39.116 1.507 0 0-.99.116-2.092.173l6.657 19.802 4.001-11.998-2.848-7.804a33.58 33.58 0 0 1-1.917-.173c-.986-.059-.87-1.565.116-1.507 0 0 3.018.233 4.815.233 1.911 0 4.873-.233 4.873-.233.985-.058 1.1 1.39.116 1.507 0 0-.992.116-2.092.173l6.606 19.652 1.886-5.977c.838-2.611 1.33-4.461 1.33-6.026zm-30.623.921c0 7.236 4.205 13.49 10.303 16.453L5.802 15.06a18.21 18.21 0 0 0-1.583 7.44z" />
+                            </g>
+                          </g>
+                        </g>
+                        <g class="anime-element fadeleft-animation">
+                          <g transform="translate(251 390)">
+                            <use fill="#000" filter="url(#hero-illustration-s)" xlink:href="#hero-illustration-t" />
+                            <use fill="#FFF" xlink:href="#hero-illustration-t" />
+                            <circle id="hero-illustration-t" cx="36" cy="36" r="36" />
+                            <g transform="translate(18 18)">
+                              <path fill="#1A1919" d="M8.811 24.15c-.064-.08-.17-.056-.271-.032a.957.957 0 0 1-.24.034.521.521 0 0 1-.44-.222c-.116-.18-.11-.448.02-.755l.06-.137c.206-.462.552-1.235.164-1.972-.292-.555-.768-.9-1.34-.973a1.724 1.724 0 0 0-1.475.531c-.57.627-.658 1.48-.548 1.781.04.11.103.141.15.147.096.013.239-.057.329-.298a1.76 1.76 0 0 0 .025-.078c.04-.128.115-.365.237-.555a1.034 1.034 0 0 1 1.432-.298c.398.26.552.748.382 1.214-.088.24-.231.7-.2 1.078.064.766.536 1.073.96 1.106.411.015.699-.216.772-.384.043-.1.006-.16-.017-.187" />
+                              <path fill="#1A1919" d="M12.726 10.096c1.343-1.55 2.997-2.896 4.478-3.653.051-.026.106.03.078.08-.118.213-.344.668-.416 1.013-.011.054.047.095.093.064.922-.628 2.525-1.3 3.93-1.386.061-.003.09.074.042.11-.214.164-.448.391-.618.62a.06.06 0 0 0 .047.096c.987.007 2.379.352 3.286.86.061.034.018.153-.051.137-1.373-.314-3.62-.552-5.953.016-2.084.507-3.674 1.29-4.834 2.133-.059.042-.13-.035-.082-.09zm12.229 15.666a.108.108 0 0 0 .063-.107.1.1 0 0 0-.111-.09s-2.867.423-5.574-.566c.294-.957 1.079-.612 2.264-.516a16.587 16.587 0 0 0 5.467-.59c1.227-.352 2.837-1.044 4.088-2.03.422.925.571 1.944.571 1.944s.327-.059.6.109c.258.158.447.488.318 1.34-.263 1.59-.94 2.882-2.08 4.07a8.567 8.567 0 0 1-2.497 1.864c-.51.268-1.055.5-1.63.687-4.293 1.4-8.687-.139-10.103-3.443a5.302 5.302 0 0 1-.284-.78c-.604-2.178-.091-4.79 1.51-6.435.1-.105.2-.229.2-.384 0-.13-.083-.267-.154-.364-.56-.811-2.502-2.194-2.112-4.87.28-1.922 1.964-3.276 3.534-3.196l.398.023c.68.04 1.274.128 1.834.151.937.04 1.78-.096 2.779-.926.337-.28.607-.523 1.064-.6.048-.009.167-.052.406-.04.244.013.476.08.684.218.8.532.914 1.82.956 2.762.023.538.088 1.839.11 2.212.052.854.277.975.732 1.124.255.084.493.147.843.245 1.06.297 1.688.599 2.084.986.236.241.346.498.38.744.125.91-.708 2.034-2.912 3.055-2.41 1.116-5.332 1.399-7.352 1.174l-.707-.08c-1.616-.217-2.537 1.868-1.568 3.295.625.92 2.327 1.52 4.03 1.52 3.904 0 6.905-1.664 8.021-3.102a1.48 1.48 0 0 0 .09-.127c.055-.082.01-.128-.06-.081-.911.623-4.962 3.096-9.295 2.352 0 0-.527-.086-1.007-.273-.382-.148-1.182-.515-1.279-1.334 3.497 1.08 5.699.059 5.699.059zM5.748 17.466c-1.216.236-2.288.924-2.943 1.874-.392-.326-1.122-.957-1.251-1.203-1.046-1.984 1.142-5.84 2.67-8.019C8.004 4.736 13.922.662 16.66 1.401c.445.126 1.92 1.833 1.92 1.833s-2.738 1.517-5.278 3.63c-3.421 2.63-6.006 6.454-7.554 10.602zm2.044 9.102a2.923 2.923 0 0 1-.562.04c-1.83-.05-3.806-1.694-4.002-3.645-.218-2.155.886-3.814 2.84-4.208.233-.047.515-.074.82-.058 1.094.06 2.707.899 3.076 3.28.326 2.107-.192 4.254-2.172 4.59zm24.787-3.817c-.016-.056-.118-.428-.258-.877a7.107 7.107 0 0 0-.286-.765c.563-.842.573-1.594.498-2.02-.08-.528-.3-.978-.744-1.443-.444-.465-1.351-.942-2.627-1.3-.146-.04-.627-.172-.67-.185-.003-.028-.035-1.576-.064-2.24-.021-.48-.062-1.23-.295-1.97-.278-.999-.762-1.874-1.366-2.433 1.667-1.726 2.708-3.626 2.705-5.257-.005-3.135-3.862-4.084-8.615-2.119l-1.008.427c-.004-.004-1.82-1.783-1.848-1.807-5.419-4.72-22.364 14.083-16.946 18.65l1.184 1.001c-.307.794-.428 1.704-.33 2.683.127 1.256.776 2.461 1.83 3.392.998.884 2.312 1.443 3.587 1.442 2.108 4.85 6.925 7.825 12.573 7.993 6.058.18 11.144-2.658 13.275-7.756.14-.358.73-1.97.73-3.393 0-1.43-.81-2.023-1.325-2.023z" />
+                              <path fill="#1A1919" d="M25.504 16.983c.262-.03.514-.032.745 0 .134-.306.157-.834.037-1.41-.18-.854-.422-1.372-.922-1.291-.5.08-.519.7-.34 1.555.1.48.28.892.48 1.146M21.208 17.66c.358.157.578.26.664.17.055-.057.039-.165-.047-.304-.177-.288-.54-.58-.926-.744-.788-.34-1.729-.226-2.455.294-.24.175-.466.418-.434.565.01.048.047.084.13.096.198.022.888-.326 1.683-.375.562-.034 1.026.141 1.385.298M20.487 18.07c-.466.074-.723.227-.888.37-.141.123-.228.259-.228.354 0 .046.02.072.036.085.021.019.047.03.077.03.105 0 .341-.095.341-.095.649-.232 1.077-.204 1.501-.156.235.026.346.041.397-.04.015-.022.034-.072-.013-.148-.11-.177-.58-.476-1.223-.4M24.053 19.576c.316.156.665.095.779-.136.113-.23-.052-.543-.368-.699-.317-.155-.666-.094-.779.137-.113.23.051.543.368.698M26.089 17.8c-.258-.004-.471.278-.477.63-.006.352.198.641.455.646.257.004.47-.278.476-.63.006-.352-.197-.641-.454-.646" />
+                            </g>
+                          </g>
+                        </g>
+                        <g class="anime-element fadeleft-animation">
+                          <g transform="translate(28 240)">
+                            <use fill="#000" filter="url(#hero-illustration-u)" xlink:href="#hero-illustration-v" />
+                            <use fill="#FFF" xlink:href="#hero-illustration-v" />
+                            <circle id="hero-illustration-v" cx="28" cy="28" r="28" />
+                            <path fill="#E57258" transform="translate(14 14)" d="M19.552 21.563c-2.057 0-3.724-1.89-3.724-4.22s1.667-4.218 3.724-4.218c2.056 0 3.724 1.889 3.724 4.219s-1.668 4.218-3.724 4.218m1.196-11.688V6.302c.879-.44 1.495-1.383 1.495-2.478V3.74c0-1.51-1.166-2.746-2.59-2.746h-.078c-1.424 0-2.59 1.236-2.59 2.746v.083c0 1.095.616 2.038 1.495 2.478v3.572a7.15 7.15 0 0 0-3.492 1.63l-9.249-7.63c.061-.248.104-.503.104-.772C5.845 1.39 4.54.002 2.925 0 1.312-.002.002 1.383 0 3.094c-.002 1.71 1.304 3.1 2.918 3.102.526 0 1.013-.158 1.44-.415l9.097 7.504a8.13 8.13 0 0 0-1.227 4.318c0 1.672.498 3.218 1.34 4.49l-2.767 2.934a2.253 2.253 0 0 0-.686-.118c-1.326 0-2.4 1.14-2.4 2.545 0 1.406 1.074 2.546 2.4 2.546 1.326 0 2.401-1.14 2.401-2.546a2.65 2.65 0 0 0-.111-.727l2.736-2.902c1.243 1.006 2.79 1.61 4.473 1.61 4.08 0 7.386-3.507 7.386-7.832 0-3.915-2.713-7.15-6.252-7.73" />
+                          </g>
+                        </g>
+                        <g class="anime-element fadeleft-animation">
+                          <g transform="translate(285 190)">
+                            <use fill="#000" filter="url(#hero-illustration-w)" xlink:href="#hero-illustration-x" />
+                            <use fill="#FFF" xlink:href="#hero-illustration-x" />
+                            <circle id="hero-illustration-x" cx="80" cy="80" r="40" />
+                            <g transform="translate(60 60)">
+                              <path d="M26.053 5.13v32.25c0 3.61 2.413 5.62 4.973 5.62C33.395 43 36 41.29 36 37.38V5.376C36 2.067 33.632 0 31.026 0c-2.605 0-4.973 2.28-4.973 5.13z" fill="#F9AB00" />
+                              <path d="M13.026 21.5v15.88C13.026 40.99 15.44 43 18 43c2.368 0 4.974-1.71 4.974-5.62V21.745c0-3.308-2.369-5.375-4.974-5.375s-4.974 2.28-4.974 5.131z" fill="#E37400" />
+                              <ellipse fill="#E37400" cx="4.974" cy="37.869" rx="4.974" ry="5.131" />
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="clients section">
+          <div class="container">
+            <div class="clients-inner section-inner text-center">
+              <div class="container-sm">
+                <h2 class="section-title mt-0">
+                  Junte-se a mais de 2000 empresas que usam o Rock Convert diariamente
+                </h2>
+                <p class="section-paragraph">
+                  Estas são algumas das empresas que estão aumentando as conversões com nossa solução:
+                </p>
+                <ul class="list-reset mb-0 mt-48">
+                  <li>
+                    <span class="screen-reader-text">Totvs</span>
+                    <img src="src/images/totvs.png" alt="Totvs" width="120" height="35" >
+                  </li>
+                  <li>
+                    <span class="screen-reader-text">Yapay</span>
+                    <img src="src/images/yapay.png" alt="Yapay" width="135" height="60">
+                  </li>
+                  <li>
+                    <span class="screen-reader-text">Lokamig</span>
+                    <img src="src/images/lokamig.png" alt="Lokamig" width="162" height="40">
+                  </li>
+                  <li>
+                    <span class="screen-reader-text">Friendslab</span>
+                    <img src="src/images/friendslab.png" alt="Friendslab" width="178" height="30" >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="features-extended section">
+          <div class="container">
+            <div class="features-extended-inner section-inner has-top-divider">
+              <div class="feature-extended">
+                <div class="feature-extended-image is-revealing">
+                  <svg width="480" height="320" viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <defs>
+                      <filter x="-500%" y="-500%" width="1000%" height="1000%" filterUnits="objectBoundingBox" id="dropshadow-f-1">
+                        <feOffset dy="16" in="SourceAlpha" result="shadowOffsetOuter" />
+                        <feGaussianBlur stdDeviation="24" in="shadowOffsetOuter" result="shadowBlurOuter" />
+                        <feColorMatrix values="0 0 0 0 0.06 0 0 0 0 0.13 0 0 0 0 0.34 0 0 0 0.14 0" in="shadowBlurOuter" />
+                      </filter>
+                    </defs>
+                    <g fill="#F4F7FE">
+                      <path d="M281.984 251.89c88.366 0 65.883-12.77 65.883-101.136S378.366 0 290 0 .043 62.388.043 150.754c0 88.365 193.576 101.137 281.941 101.137z" />
+                      <path d="M382.88 319.917c33.137 0 96.563-56.96 96.563-90.098 0-33.137-82.61-7.086-115.746-7.086-33.137 0-27.301-5.2-27.301 27.938 0 33.137 13.347 69.246 46.484 69.246z" />
+                    </g>
+                    <g transform="translate(20 5)">
+                      <image xlink:href="src/images/config-banners.png" width="469" height="316" />
+                    </g>
+                  </svg>
+                </div>
+                <div class="feature-extended-body">
+                  <h3 class="mt-0">Crie e gerencie banners</h3>
+                  <p>
+                    Defina a posição do banner, onde e quando ele deve aparecer. De forma
+                    automática e com poucos cliques.
+                  </p>
+                </div>
+              </div>
+              <div class="feature-extended">
+                <div class="feature-extended-image is-revealing">
+                  <svg width="480" height="320" viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <defs>
+                      <path id="feature-2-a" d="M0 17h340v240H0z" />
+                      <filter x="-500%" y="-500%" width="1000%" height="1000%" filterUnits="objectBoundingBox" id="dropshadow-f-2">
+                        <feOffset dy="16" in="SourceAlpha" result="shadowOffsetOuter" />
+                        <feGaussianBlur stdDeviation="24" in="shadowOffsetOuter" result="shadowBlurOuter" />
+                        <feColorMatrix values="0 0 0 0 0.06 0 0 0 0 0.13 0 0 0 0 0.34 0 0 0 0.14 0" in="shadowBlurOuter" />
+                      </filter>
+                      <filter x="-100%" y="-75%" width="350%" height="350%" filterUnits="objectBoundingBox" id="hero-illustration-ii1">
+                        <feOffset dx="12" dy="24" in="SourceAlpha" result="shadowOffsetOuter1" />
+                        <feGaussianBlur stdDeviation="16" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
+                        <feColorMatrix values="0 0 0 0 0.0666666667 0 0 0 0 0.062745098 0 0 0 0 0.243137255 0 0 0 0.08 0" in="shadowBlurOuter1" />
+                      </filter>
+                      <circle id="hero-illustration-90" cx="90" cy="90" r="45" />
+                    </defs>
+                    <g fill="none" fill-rule="evenodd">
+                      <path d="M456.32 303.547c88.366 0-106.453-64.428-106.453-152.793C349.867 62.388 380.366 0 292 0S2.043 62.388 2.043 150.754c0 88.365 365.912 152.793 454.277 152.793z" fill="#F4F7FE" />
+                      <g transform="translate(70 23)">
+                        <use fill="#FFF" xlink:href="#feature-2-a" style="mix-blend-mode:multiply;filter:url(#dropshadow-f-2)" />
+                        <path fill="#FFF" d="M0 0h340v240H0z" />
+                        <path stroke="#CCC" fill="#E5E5E5" d="M52.5 165.5h55v37h-55zM226.5 165.5h81v37h-81z" />
+                        <path d="M.5 199.5v41h339v-41h-123v-34h-99v34H.5z" stroke="#CCC" fill="#F1F1F1" />
+                        <rect fill="#555" opacity=".3" x="61" y="179" width="38" height="8" rx="4" />
+                        <rect fill="#555" opacity=".3" x="236" y="179" width="61" height="8" rx="4" />
+                        <path d="M33 54.848c24.458 5.96 48.458 17.924 72 35.89s42.542 42.054 57 72.262M170 163c-1.541-23.667-5.009-47.158-10.402-70.473C154.204 69.212 147.338 48.037 139 29M258 90c-16.703 6.312-32.629 16.312-47.777 30-15.149 13.688-26.89 28.688-35.223 45" stroke="#34F8C2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="9,8" />
+                        <path d="M131.335 178.004h1.33V188h-1.33v-9.996zm3.374 2.758h1.12v1.148h.028c.495-.877 1.279-1.316 2.352-1.316.476 0 .873.065 1.19.196.317.13.574.313.77.546.196.233.334.511.413.833.08.322.119.679.119 1.071V188h-1.19v-4.9c0-.448-.13-.803-.392-1.064-.261-.261-.62-.392-1.078-.392-.364 0-.679.056-.945.168-.266.112-.488.27-.665.476a2.05 2.05 0 0 0-.399.721 2.932 2.932 0 0 0-.133.903V188h-1.19v-7.238zm9.436 0h1.442v1.05h-1.442v4.494c0 .14.012.252.035.336.023.084.068.15.133.196a.588.588 0 0 0 .273.091c.117.014.268.021.455.021h.546V188h-.91c-.308 0-.572-.021-.791-.063a1.162 1.162 0 0 1-.532-.231.987.987 0 0 1-.301-.476c-.065-.205-.098-.476-.098-.812v-4.606h-1.232v-1.05h1.232v-2.17h1.19v2.17zm7.784 2.926a2.435 2.435 0 0 0-.189-.798 2.04 2.04 0 0 0-.434-.651 2.036 2.036 0 0 0-1.463-.595c-.308 0-.586.054-.833.161-.247.107-.46.254-.637.441a2.11 2.11 0 0 0-.42.651 2.479 2.479 0 0 0-.182.791h4.158zm1.148 2.016c-.159.812-.509 1.423-1.05 1.834-.541.41-1.223.616-2.044.616-.579 0-1.08-.093-1.505-.28a2.967 2.967 0 0 1-1.071-.784 3.33 3.33 0 0 1-.651-1.204 5.802 5.802 0 0 1-.245-1.526c0-.55.084-1.055.252-1.512.168-.457.404-.854.707-1.19a3.208 3.208 0 0 1 2.443-1.064c.644 0 1.178.133 1.603.399a3.17 3.17 0 0 1 1.022 1.015c.257.41.434.859.532 1.344.098.485.138.947.119 1.386h-5.418c-.01.317.028.618.112.903.084.285.22.537.406.756.187.22.425.394.714.525.29.13.63.196 1.022.196.504 0 .917-.117 1.239-.35.322-.233.534-.588.637-1.064h1.176zm7.588 1.68c0 1.185-.27 2.072-.812 2.66-.541.588-1.39.882-2.548.882-.336 0-.679-.037-1.029-.112a3.153 3.153 0 0 1-.952-.364 2.218 2.218 0 0 1-.707-.658c-.187-.27-.29-.602-.308-.994h1.19a.88.88 0 0 0 .203.546c.126.15.28.27.462.364.182.093.38.161.595.203.215.042.42.063.616.063.392 0 .723-.068.994-.203.27-.135.495-.322.672-.56.177-.238.306-.525.385-.861.08-.336.119-.705.119-1.106v-.476h-.028a2 2 0 0 1-.931.987c-.415.21-.856.315-1.323.315-.541 0-1.013-.098-1.414-.294a2.96 2.96 0 0 1-1.008-.791 3.369 3.369 0 0 1-.609-1.162 4.793 4.793 0 0 1-.203-1.407c0-.43.056-.87.168-1.323.112-.453.299-.863.56-1.232a3.07 3.07 0 0 1 1.036-.91c.43-.238.957-.357 1.582-.357.457 0 .877.1 1.26.301.383.2.681.502.896.903h.014v-1.036h1.12v6.622zm-3.332-.35c.392 0 .726-.082 1.001-.245.275-.163.497-.378.665-.644.168-.266.292-.567.371-.903.08-.336.119-.672.119-1.008 0-.317-.037-.63-.112-.938a2.617 2.617 0 0 0-.357-.833 1.854 1.854 0 0 0-.637-.595c-.261-.15-.579-.224-.952-.224-.383 0-.71.072-.98.217-.27.145-.492.338-.665.581a2.464 2.464 0 0 0-.378.84c-.08.317-.119.649-.119.994 0 .327.033.653.098.98.065.327.177.623.336.889.159.266.369.48.63.644.261.163.588.245.98.245zm5.082-6.272h1.12v1.526h.028c.29-.588.644-1.022 1.064-1.302.42-.28.952-.41 1.596-.392v1.26c-.476 0-.882.065-1.218.196a1.92 1.92 0 0 0-.812.574 2.375 2.375 0 0 0-.448.917c-.093.36-.14.772-.14 1.239V188h-1.19v-7.238zm11.116 7.21c-.205.121-.49.182-.854.182-.308 0-.553-.086-.735-.259-.182-.173-.273-.455-.273-.847a2.847 2.847 0 0 1-1.141.847 3.771 3.771 0 0 1-1.407.259 3.77 3.77 0 0 1-.931-.112 2.165 2.165 0 0 1-.763-.35 1.68 1.68 0 0 1-.511-.623c-.126-.257-.189-.567-.189-.931 0-.41.07-.747.21-1.008.14-.261.324-.474.553-.637.229-.163.49-.287.784-.371.294-.084.595-.154.903-.21.327-.065.637-.114.931-.147.294-.033.553-.08.777-.14.224-.06.401-.15.532-.266.13-.117.196-.287.196-.511 0-.261-.049-.471-.147-.63a1.008 1.008 0 0 0-.378-.364 1.537 1.537 0 0 0-.518-.168 3.912 3.912 0 0 0-.567-.042c-.504 0-.924.096-1.26.287-.336.191-.518.553-.546 1.085h-1.19c.019-.448.112-.826.28-1.134.168-.308.392-.558.672-.749.28-.191.6-.329.959-.413.36-.084.744-.126 1.155-.126.327 0 .651.023.973.07.322.047.614.142.875.287s.471.348.63.609c.159.261.238.602.238 1.022v3.724c0 .28.016.485.049.616.033.13.142.196.329.196.103 0 .224-.023.364-.07v.924zm-1.932-3.71c-.15.112-.345.194-.588.245a8.973 8.973 0 0 1-.763.126c-.266.033-.534.07-.805.112a2.96 2.96 0 0 0-.728.203c-.215.093-.39.226-.525.399-.135.173-.203.408-.203.707 0 .196.04.362.119.497.08.135.182.245.308.329.126.084.273.145.441.182.168.037.345.056.532.056.392 0 .728-.054 1.008-.161a2.12 2.12 0 0 0 .686-.406c.177-.163.308-.34.392-.532.084-.191.126-.371.126-.539v-1.218zm7.952-1.176c-.093-.457-.29-.812-.588-1.064-.299-.252-.7-.378-1.204-.378-.43 0-.789.08-1.078.238-.29.159-.52.369-.693.63a2.65 2.65 0 0 0-.371.903c-.075.34-.112.693-.112 1.057 0 .336.04.663.119.98.08.317.203.6.371.847.168.247.387.446.658.595.27.15.593.224.966.224.588 0 1.048-.154 1.379-.462.331-.308.534-.742.609-1.302h1.218c-.13.85-.448 1.517-.952 2.002-.504.485-1.18.747-2.03.784l-.462.588.028.028c.093-.065.247-.098.462-.098.299 0 .57.084.812.252.243.168.364.425.364.77 0 .233-.054.43-.161.588a1.255 1.255 0 0 1-.413.385 1.83 1.83 0 0 1-.56.21 3 3 0 0 1-.602.063c-.224 0-.441-.026-.651-.077a6.997 6.997 0 0 1-.637-.189l.252-.616a2.7 2.7 0 0 0 .399.126 1.927 1.927 0 0 0 .749.035c.103-.014.196-.04.28-.077a.771.771 0 0 0 .21-.133.262.262 0 0 0 .084-.203c0-.13-.063-.236-.189-.315a.864.864 0 0 0-.469-.119c-.112 0-.21.01-.294.028a2.27 2.27 0 0 0-.28.084l-.238-.392.742-.952a3.366 3.366 0 0 1-1.309-.35 2.884 2.884 0 0 1-.945-.77 3.347 3.347 0 0 1-.574-1.12 4.84 4.84 0 0 1-.196-1.414c0-.541.07-1.048.21-1.519.14-.471.352-.882.637-1.232a2.99 2.99 0 0 1 1.071-.826c.43-.2.929-.301 1.498-.301.41 0 .796.049 1.155.147.36.098.677.25.952.455.275.205.502.464.679.777.177.313.29.684.336 1.113h-1.232zm3.472 1.302c0 .439.058.828.175 1.169.117.34.278.625.483.854.205.229.446.404.721.525.275.121.567.182.875.182.308 0 .6-.06.875-.182.275-.121.516-.296.721-.525.205-.229.366-.513.483-.854a3.6 3.6 0 0 0 .175-1.169 3.6 3.6 0 0 0-.175-1.169 2.523 2.523 0 0 0-.483-.861 2.057 2.057 0 0 0-.721-.532 2.146 2.146 0 0 0-.875-.182c-.308 0-.6.06-.875.182a2.057 2.057 0 0 0-.721.532c-.205.233-.366.52-.483.861a3.6 3.6 0 0 0-.175 1.169zm-1.26 0c0-.532.075-1.029.224-1.491.15-.462.373-.863.672-1.204.299-.34.667-.609 1.106-.805.439-.196.943-.294 1.512-.294.579 0 1.085.098 1.519.294.434.196.8.464 1.099.805.299.34.523.742.672 1.204.15.462.224.959.224 1.491 0 .532-.075 1.027-.224 1.484-.15.457-.373.856-.672 1.197-.299.34-.665.607-1.099.798-.434.191-.94.287-1.519.287-.57 0-1.073-.096-1.512-.287a3.091 3.091 0 0 1-1.106-.798 3.387 3.387 0 0 1-.672-1.197 4.755 4.755 0 0 1-.224-1.484zm4.592-5.95a.604.604 0 0 0 .483-.203c.117-.135.189-.324.217-.567h.686c-.093.653-.268 1.099-.525 1.337a1.32 1.32 0 0 1-.931.357c-.187 0-.364-.037-.532-.112a6.341 6.341 0 0 1-.504-.252 7.12 7.12 0 0 0-.497-.252 1.185 1.185 0 0 0-.497-.112c-.43 0-.686.238-.77.714h-.658c.093-.57.259-.985.497-1.246s.553-.392.945-.392c.187 0 .369.037.546.112.177.075.35.159.518.252.168.093.338.177.511.252.173.075.343.112.511.112zm8.862 5.25a2.435 2.435 0 0 0-.189-.798 2.04 2.04 0 0 0-.434-.651 2.036 2.036 0 0 0-1.463-.595c-.308 0-.586.054-.833.161-.247.107-.46.254-.637.441a2.11 2.11 0 0 0-.42.651 2.479 2.479 0 0 0-.182.791h4.158zm1.148 2.016c-.159.812-.509 1.423-1.05 1.834-.541.41-1.223.616-2.044.616-.579 0-1.08-.093-1.505-.28a2.967 2.967 0 0 1-1.071-.784 3.33 3.33 0 0 1-.651-1.204 5.802 5.802 0 0 1-.245-1.526c0-.55.084-1.055.252-1.512.168-.457.404-.854.707-1.19a3.208 3.208 0 0 1 2.443-1.064c.644 0 1.178.133 1.603.399a3.17 3.17 0 0 1 1.022 1.015c.257.41.434.859.532 1.344.098.485.138.947.119 1.386h-5.418c-.01.317.028.618.112.903.084.285.22.537.406.756.187.22.425.394.714.525.29.13.63.196 1.022.196.504 0 .917-.117 1.239-.35.322-.233.534-.588.637-1.064h1.176zm2.072.014c.01.261.07.483.182.665.112.182.259.327.441.434.182.107.387.184.616.231.229.047.464.07.707.07.187 0 .383-.014.588-.042.205-.028.394-.08.567-.154.173-.075.315-.184.427-.329a.877.877 0 0 0 .168-.553c0-.308-.117-.541-.35-.7a2.978 2.978 0 0 0-.875-.385c-.35-.098-.73-.187-1.141-.266a5.92 5.92 0 0 1-1.141-.336 2.362 2.362 0 0 1-.875-.609c-.233-.261-.35-.625-.35-1.092 0-.364.082-.677.245-.938.163-.261.373-.474.63-.637.257-.163.546-.285.868-.364.322-.08.642-.119.959-.119.41 0 .789.035 1.134.105.345.07.651.191.917.364s.478.406.637.7c.159.294.252.66.28 1.099h-1.19a1.205 1.205 0 0 0-.182-.581 1.192 1.192 0 0 0-.392-.371 1.78 1.78 0 0 0-.525-.203 2.702 2.702 0 0 0-.581-.063 3.54 3.54 0 0 0-.539.042 1.815 1.815 0 0 0-.497.147c-.15.07-.27.163-.364.28a.706.706 0 0 0-.14.455.67.67 0 0 0 .217.511c.145.135.329.247.553.336.224.089.476.163.756.224.28.06.56.124.84.189.299.065.59.145.875.238.285.093.537.217.756.371.22.154.397.348.532.581.135.233.203.523.203.868 0 .439-.091.803-.273 1.092-.182.29-.42.523-.714.7a2.985 2.985 0 0 1-.994.371 5.88 5.88 0 0 1-1.099.105c-.401 0-.784-.042-1.148-.126a2.816 2.816 0 0 1-.966-.413 2.106 2.106 0 0 1-.672-.756c-.168-.313-.261-.693-.28-1.141h1.19z" fill="#000" fill-rule="nonzero" />
+                        <g transform="translate(60 -75)">
+                          <use fill="#000" filter="url(#hero-illustration-ii1)" xlink:href="#hero-illustration-90" />
+                          <use fill="#FFF" xlink:href="#hero-illustration-90" />
+                          <g transform="translate(62 62) scale(1.6)">
+                            <path fill="#1A1919" d="M8.811 24.15c-.064-.08-.17-.056-.271-.032a.957.957 0 0 1-.24.034.521.521 0 0 1-.44-.222c-.116-.18-.11-.448.02-.755l.06-.137c.206-.462.552-1.235.164-1.972-.292-.555-.768-.9-1.34-.973a1.724 1.724 0 0 0-1.475.531c-.57.627-.658 1.48-.548 1.781.04.11.103.141.15.147.096.013.239-.057.329-.298a1.76 1.76 0 0 0 .025-.078c.04-.128.115-.365.237-.555a1.034 1.034 0 0 1 1.432-.298c.398.26.552.748.382 1.214-.088.24-.231.7-.2 1.078.064.766.536 1.073.96 1.106.411.015.699-.216.772-.384.043-.1.006-.16-.017-.187" />
+                            <path fill="#1A1919" d="M12.726 10.096c1.343-1.55 2.997-2.896 4.478-3.653.051-.026.106.03.078.08-.118.213-.344.668-.416 1.013-.011.054.047.095.093.064.922-.628 2.525-1.3 3.93-1.386.061-.003.09.074.042.11-.214.164-.448.391-.618.62a.06.06 0 0 0 .047.096c.987.007 2.379.352 3.286.86.061.034.018.153-.051.137-1.373-.314-3.62-.552-5.953.016-2.084.507-3.674 1.29-4.834 2.133-.059.042-.13-.035-.082-.09zm12.229 15.666a.108.108 0 0 0 .063-.107.1.1 0 0 0-.111-.09s-2.867.423-5.574-.566c.294-.957 1.079-.612 2.264-.516a16.587 16.587 0 0 0 5.467-.59c1.227-.352 2.837-1.044 4.088-2.03.422.925.571 1.944.571 1.944s.327-.059.6.109c.258.158.447.488.318 1.34-.263 1.59-.94 2.882-2.08 4.07a8.567 8.567 0 0 1-2.497 1.864c-.51.268-1.055.5-1.63.687-4.293 1.4-8.687-.139-10.103-3.443a5.302 5.302 0 0 1-.284-.78c-.604-2.178-.091-4.79 1.51-6.435.1-.105.2-.229.2-.384 0-.13-.083-.267-.154-.364-.56-.811-2.502-2.194-2.112-4.87.28-1.922 1.964-3.276 3.534-3.196l.398.023c.68.04 1.274.128 1.834.151.937.04 1.78-.096 2.779-.926.337-.28.607-.523 1.064-.6.048-.009.167-.052.406-.04.244.013.476.08.684.218.8.532.914 1.82.956 2.762.023.538.088 1.839.11 2.212.052.854.277.975.732 1.124.255.084.493.147.843.245 1.06.297 1.688.599 2.084.986.236.241.346.498.38.744.125.91-.708 2.034-2.912 3.055-2.41 1.116-5.332 1.399-7.352 1.174l-.707-.08c-1.616-.217-2.537 1.868-1.568 3.295.625.92 2.327 1.52 4.03 1.52 3.904 0 6.905-1.664 8.021-3.102a1.48 1.48 0 0 0 .09-.127c.055-.082.01-.128-.06-.081-.911.623-4.962 3.096-9.295 2.352 0 0-.527-.086-1.007-.273-.382-.148-1.182-.515-1.279-1.334 3.497 1.08 5.699.059 5.699.059zM5.748 17.466c-1.216.236-2.288.924-2.943 1.874-.392-.326-1.122-.957-1.251-1.203-1.046-1.984 1.142-5.84 2.67-8.019C8.004 4.736 13.922.662 16.66 1.401c.445.126 1.92 1.833 1.92 1.833s-2.738 1.517-5.278 3.63c-3.421 2.63-6.006 6.454-7.554 10.602zm2.044 9.102a2.923 2.923 0 0 1-.562.04c-1.83-.05-3.806-1.694-4.002-3.645-.218-2.155.886-3.814 2.84-4.208.233-.047.515-.074.82-.058 1.094.06 2.707.899 3.076 3.28.326 2.107-.192 4.254-2.172 4.59zm24.787-3.817c-.016-.056-.118-.428-.258-.877a7.107 7.107 0 0 0-.286-.765c.563-.842.573-1.594.498-2.02-.08-.528-.3-.978-.744-1.443-.444-.465-1.351-.942-2.627-1.3-.146-.04-.627-.172-.67-.185-.003-.028-.035-1.576-.064-2.24-.021-.48-.062-1.23-.295-1.97-.278-.999-.762-1.874-1.366-2.433 1.667-1.726 2.708-3.626 2.705-5.257-.005-3.135-3.862-4.084-8.615-2.119l-1.008.427c-.004-.004-1.82-1.783-1.848-1.807-5.419-4.72-22.364 14.083-16.946 18.65l1.184 1.001c-.307.794-.428 1.704-.33 2.683.127 1.256.776 2.461 1.83 3.392.998.884 2.312 1.443 3.587 1.442 2.108 4.85 6.925 7.825 12.573 7.993 6.058.18 11.144-2.658 13.275-7.756.14-.358.73-1.97.73-3.393 0-1.43-.81-2.023-1.325-2.023z" />
+                            <path fill="#1A1919" d="M25.504 16.983c.262-.03.514-.032.745 0 .134-.306.157-.834.037-1.41-.18-.854-.422-1.372-.922-1.291-.5.08-.519.7-.34 1.555.1.48.28.892.48 1.146M21.208 17.66c.358.157.578.26.664.17.055-.057.039-.165-.047-.304-.177-.288-.54-.58-.926-.744-.788-.34-1.729-.226-2.455.294-.24.175-.466.418-.434.565.01.048.047.084.13.096.198.022.888-.326 1.683-.375.562-.034 1.026.141 1.385.298M20.487 18.07c-.466.074-.723.227-.888.37-.141.123-.228.259-.228.354 0 .046.02.072.036.085.021.019.047.03.077.03.105 0 .341-.095.341-.095.649-.232 1.077-.204 1.501-.156.235.026.346.041.397-.04.015-.022.034-.072-.013-.148-.11-.177-.58-.476-1.223-.4M24.053 19.576c.316.156.665.095.779-.136.113-.23-.052-.543-.368-.699-.317-.155-.666-.094-.779.137-.113.23.051.543.368.698M26.089 17.8c-.258-.004-.471.278-.477.63-.006.352.198.641.455.646.257.004.47-.278.476-.63.006-.352-.197-.641-.454-.646" />
+                          </g>
+                        </g>
+                        <g transform="translate(185 0)">
+                          <use fill="#000" filter="url(#hero-illustration-ii1)" xlink:href="#hero-illustration-90" />
+                          <use fill="#FFF" xlink:href="#hero-illustration-90" />
+                          <g fill="#364A65" transform="translate(58 84) scale(0.9)">
+                            <path d="M0 .269A26.992 26.992 0 0 1 3.988 0c1.965 0 3.34.287 4.283 1.014.785.613 1.218 1.513 1.218 2.7 0 1.646-1.199 2.775-2.338 3.177v.058c.924.364 1.435 1.226 1.768 2.413.413 1.454.826 3.14 1.081 3.637H6.935c-.216-.364-.53-1.417-.924-3.006-.353-1.608-.923-2.048-2.14-2.067h-.905V13H0V.269zM2.966 5.82h1.179c1.493 0 2.377-.727 2.377-1.857 0-1.187-.825-1.78-2.2-1.8a7.663 7.663 0 0 0-1.356.097v3.56zM11 .266a24.469 24.469 0 0 1 3.802-.265c2.363 0 3.894.436 5.094 1.364C21.188 2.35 22 3.923 22 6.178c0 2.444-.867 4.13-2.067 5.173-1.31 1.117-3.304 1.648-5.74 1.648A23.73 23.73 0 0 1 11 12.81V.267zm2.824 10.422c.24.057.627.057.978.057 2.547.019 4.208-1.421 4.208-4.472.019-2.653-1.495-4.055-3.913-4.055a5.702 5.702 0 0 0-1.273.114v8.356z" />
+                            <path d="M25.432 10.83c.924.53 1.98.814 3.058.823 1.746 0 2.765-.879 2.765-2.15 0-1.18-.706-1.853-2.49-2.507-2.157-.73-3.49-1.796-3.49-3.573C25.275 1.459 26.98 0 29.549 0c1.353 0 2.333.3 2.922.617L32 1.945a5.467 5.467 0 0 0-2.51-.598c-1.804 0-2.49 1.029-2.49 1.889 0 1.178.804 1.758 2.628 2.432C31.863 6.49 33 7.519 33 9.37 33 11.317 31.49 13 28.372 13c-1.274 0-2.666-.355-3.372-.804l.432-1.366zM36.805 2v2.017H39v1.218h-2.195v4.746c0 1.091.296 1.71 1.15 1.71.3.004.598-.032.888-.11l.07 1.2c-.296.128-.767.219-1.359.219-.714 0-1.29-.236-1.655-.673-.436-.473-.592-1.255-.592-2.291v-4.8H34v-1.22h1.307V2.419L36.805 2zM50.805 2v2.017H53v1.218h-2.195v4.746c0 1.091.296 1.71 1.15 1.71.3.004.598-.032.888-.11l.07 1.2c-.296.128-.767.219-1.359.219-.714 0-1.29-.236-1.655-.673-.436-.473-.592-1.255-.592-2.291v-4.8H48v-1.22h1.307V2.419L50.805 2z" />
+                            <path d="M45.549 12.804l-.127-1.085h-.054c-.49.676-1.433 1.281-2.684 1.281C40.907 13 40 11.773 40 10.527c0-2.08 1.886-3.219 5.277-3.201v-.178c0-.711-.2-1.992-1.995-1.992a4.436 4.436 0 0 0-2.285.64l-.362-1.031C41.36 4.302 42.412 4 43.518 4c2.684 0 3.337 1.797 3.337 3.522v3.22c-.012.69.037 1.38.145 2.063h-1.451zm-.236-4.393c-1.74-.036-3.717.267-3.717 1.939 0 1.014.689 1.494 1.505 1.494 1.143 0 1.868-.712 2.122-1.441.056-.16.087-.328.09-.498V8.41zM56 1.06c.018.577-.386 1.04-1.028 1.04a.937.937 0 0 1-.697-.302A1.036 1.036 0 0 1 54 1.06a1.06 1.06 0 0 1 .288-.758c.19-.2.452-.309.721-.302.605 0 .99.463.99 1.06zM54.201 13V3.679h1.614V13h-1.614zM66 8.429C66 11.613 63.64 13 61.415 13 58.922 13 57 11.292 57 8.571 57 5.69 59.017 4 61.566 4 64.211 4 66 5.796 66 8.429zm-4.51 3.397c1.599 0 2.797-1.405 2.797-3.344 0-1.458-.78-3.308-2.759-3.308-1.979 0-2.835 1.707-2.835 3.344 0 1.885 1.16 3.308 2.797 3.308z" />
+                            <path d="M67.077 6.582c0-.91-.02-1.655-.077-2.382h1.5l.096 1.455h.039C69.096 4.818 70.173 4 71.712 4 73 4 75 4.727 75 7.745V13h-1.693V7.927c0-1.418-.557-2.6-2.153-2.6-1.116 0-1.981.746-2.27 1.637-.081.24-.12.492-.115.745V13h-1.692V6.582z" />
+                          </g>
+                        </g>
+                        <g transform="translate(-80 -35)">
+                          <use fill="#000" filter="url(#hero-illustration-ii1)" xlink:href="#hero-illustration-90" />
+                          <use fill="#FFF" xlink:href="#hero-illustration-90" />
+                          <g transform="translate(65 65)">
+                            <path fill="#E57258" transform="scale(1.7)" d="M19.552 21.563c-2.057 0-3.724-1.89-3.724-4.22s1.667-4.218 3.724-4.218c2.056 0 3.724 1.889 3.724 4.219s-1.668 4.218-3.724 4.218m1.196-11.688V6.302c.879-.44 1.495-1.383 1.495-2.478V3.74c0-1.51-1.166-2.746-2.59-2.746h-.078c-1.424 0-2.59 1.236-2.59 2.746v.083c0 1.095.616 2.038 1.495 2.478v3.572a7.15 7.15 0 0 0-3.492 1.63l-9.249-7.63c.061-.248.104-.503.104-.772C5.845 1.39 4.54.002 2.925 0 1.312-.002.002 1.383 0 3.094c-.002 1.71 1.304 3.1 2.918 3.102.526 0 1.013-.158 1.44-.415l9.097 7.504a8.13 8.13 0 0 0-1.227 4.318c0 1.672.498 3.218 1.34 4.49l-2.767 2.934a2.253 2.253 0 0 0-.686-.118c-1.326 0-2.4 1.14-2.4 2.545 0 1.406 1.074 2.546 2.4 2.546 1.326 0 2.401-1.14 2.401-2.546a2.65 2.65 0 0 0-.111-.727l2.736-2.902c1.243 1.006 2.79 1.61 4.473 1.61 4.08 0 7.386-3.507 7.386-7.832 0-3.915-2.713-7.15-6.252-7.73" />
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                  </svg>
+                </div>
+                <div class="feature-extended-body">
+                  <h3 class="mt-0">Integrações</h3>
+                  <p>
+                    Envie todos leads capturados automaticamente para a sua ferramenta de
+                    automação de marketing:
+                    <strong>MailChimp</strong>, <strong>RD Station</strong> e
+                    <strong>HubSpot</strong>.
+                  </p>
+                </div>
+              </div>
+              <div class="feature-extended">
+                <div class="feature-extended-image is-revealing">
+                  <svg width="480" height="320" viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <defs>
+                      <path id="features-3-a" d="M0 0h278v307H0z" />
+                      <filter x="-500%" y="-500%" width="1000%" height="1000%" filterUnits="objectBoundingBox" id="dropshadow-f-3">
+                        <feOffset dy="16" in="SourceAlpha" result="shadowOffsetOuter" />
+                        <feGaussianBlur stdDeviation="24" in="shadowOffsetOuter" result="shadowBlurOuter" />
+                        <feColorMatrix values="0 0 0 0 0.06 0 0 0 0 0.13 0 0 0 0 0.34 0 0 0 0.14 0" in="shadowBlurOuter" />
+                      </filter>
+                    </defs>
+                    <g fill="none" fill-rule="evenodd">
+                      <g fill="#F4F7FE">
+                        <path d="M465.727 112.934c33.137 0-5.727-64.359-5.727-97.496s-20.974-2.617-54.111-2.617S340-17.699 340 15.438s92.59 97.496 125.727 97.496zM454.277 319.202c88.366 0-106.453-64.427-106.453-152.793S0 41.866 0 166.409s365.912 152.793 454.277 152.793z" />
+                      </g>
+                      <g transform="translate(20 35)">
+                        <image xlink:href="src/images/follow-result.png" width="480" height="271" />
+                      </g>
+                    </g>
+                  </svg>
+                </div>
+                <div class="feature-extended-body">
+                  <h3 class="mt-0">Acompanhe seus resultados</h3>
+                  <p>
+                    Veja como está o seu desempenho diretamente do seu WordPress, através
+                    dos números de visualizações e cliques em cada banner.
+                  </p>
+                </div>
+              </div>
+              <form action="https://www.rdstation.com.br/api/1.2/conversions" method="POST"
+                class="cta-form field field-grouped">
                 <input type="hidden" name="token_rdstation" value="e58085419f764dbdaf17ac942334b0fc" />
                 <input type="hidden" name="identificador" value="rock-convert" />
                 <input type="hidden" name="redirect_to" value="https://wordpress.org/plugins/rock-convert/" />
-                <div class="row justify-content-center pt-3">
-                    <div class="form-group col-md-5">
-                        <input required style="height: 50px" name="email" type="email" class="form-control" id="Email" placeholder="Digite seu e-mail">
+                <div class="control control-expanded">
+                  <input class="input" type="email" name="email" required
+                    placeholder="Digite seu email" />
+                </div>
+                <div class="control">
+                  <button data-ga-cta data-ga-action="Click" data-ga-label="Comecar Agora"
+                    class="button button-primary">
+                    Começar agora
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <section class="testimonials section">
+          <div class="container">
+            <div class="testimonials-inner section-inner">
+              <h2 class="section-title text-center">
+                Veja o que nossos clientes <br> acham sobre a nossa solução
+              </h2>
+              <div class="testimonials-wrap">
+                <div class="testimonial text-center text-xs is-revealing">
+                  <div class="testimonial-inner">
+                    <div class="testimonial-main">
+                      <div class="testimonial-header">
+                        <img class="mb-16" src="dist/images/daniel.jpg" alt="Daniel Costa"
+                          width="112" height="112" />
+                      </div>
+                      <div class="testimonial-body">
+                        <p>
+                          Uma das grandes dificuldades do blog era direcionar tráfego
+                          orgânico dos artigos, para páginas de produtos do site principal.
+                          O Rock Convert foi essencial para facilitar este trabalho e
+                          otimizar o processo.
+                        </p>
+                      </div>
                     </div>
-                    <div class="form-group col-md-3">
-                    <button type="submit" data-ga-cta data-ga-action="Click" data-ga-label="Comecar Agora" data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true" class="btn font-weight-bold atlas-cta atlas-cta-wide cta-rock">Começar Agora</button>
+                    <div class="testimonial-footer">
+                      <div class="testimonial-name">Daniel Costa</div>
+                      <div class="testimonial-role">Sócio do Clube da Pipoca</div>
+                      <div class="testimonial-result">
+                        <div class="testimonial-number">+61%</div>
+                        <div class="testimonial-subnumber">aumento de conversão</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-            </div>
-            </form>
-        </div>
-    </div>
-
-
-            <!-- client -->
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-        <h2 class="text-center font-weight-bold my-5">Junte-se a mais de 1000 empresas que<br> usam o Rock Convert diariamente</h2>
-        <p class="text-center my-5">Estas são algumas das empresas que estão <strong>aumentando as conversões</strong> com nossa solução:</p>
-            <div class="row pt-5">
-                <div class="col py-2 align-self-center parceiros">
-                    <a href="https://friendslab.co" target="_blank "><img src="img/friendslab.png" class="mx-auto d-block"></a>
+                <div class="testimonial text-center text-xs is-revealing">
+                  <div class="testimonial-inner">
+                    <div class="testimonial-main">
+                      <div class="testimonial-header">
+                        <img class="mb-16" src="dist/images/leitica.jpg" alt="Letícia Teston"
+                          width="112" height="112" />
+                      </div>
+                      <div class="testimonial-body">
+                        <p>
+                          Temos um volume alto de publicação de conteúdo, por isso
+                          precisávamos de uma solução para automatizar e personalizar a
+                          produção de CTAs para cada segmento e o Rock Convert foi ideal.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="testimonial-footer">
+                      <div class="testimonial-name">Letícia Teston</div>
+                      <div class="testimonial-role">Marketing Sênior da TOTVS</div>
+                      <div class="testimonial-result">
+                        <div class="testimonial-number">+54%</div>
+                        <div class="testimonial-subnumber">aumento de conversão</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="col py-2 align-self-center parceiros">
-                    <a href="https://rockcontent.com/blog" target="_blank "><img src="img/mdc.png" class="mx-auto d-block"></a>
-                </div>
-                <div class="col py-2 align-self-center parceiros">
-                    <a href="https://www.e-goi.com.br" target="_blank "><img src="img/e-goi.png" class="mx-auto d-block"></a>
-                </div>
-                <div class="col py-2 align-self-center parceiros">
-                    <a href="https://olist.com" target="_blank "><img src="img/olist.png" class="mx-auto d-block"></a>
-                </div>
-                <div class="col py-2 align-self-center parceiros">
-                    <a href="https://www.yapay.com.br/" target="_blank "><img src="img/yapay.png" class="mx-auto d-block"></a>
-                </div>
-                <div class="col py-2 align-self-center parceiros">
-                    <a href="https://lokamig.com.br" target="_blank "><img src="img/lokamig.png" class="mx-auto d-block"></a>
-                </div>
-                <div class="col py-2 align-self-center parceiros">
-                    <a href="https://clubedapipoca.com.br" target="_blank "><img src="img/pipoca.png" class="mx-auto d-block"></a>
-                </div>
-                <div class="col py-2 align-self-center parceiros">
-                    <a href="https://hominilupulo.com.br" target="_blank "><img src="img/homini.png" class="mx-auto d-block"></a>
-                </div>
-                
-                
-            </div>
-        </div>
-    </div>
-    
-    <!-- three-blcok -->
-    <div class="container my-5 py-2">
-        <h2 class="text-center font-weight-bold my-5">Por que usar o Rock Convert</h2>
-<div class="row">
-            <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-once="true" class="col-md-4 text-center">
-                <img src="img/click.png" alt="Phishing Detect" style="width: 20%" class="mx-auto">
-                <h4>Gerenciamento em massa</h4>
-                <p>Gerencie seus banners por categoria de forma simples e intuitiva.</p>
-            </div>
-             <div data-aos="fade-up" data-aos-delay="0" data-aos-duration="1000" data-aos-once="true" class="col-md-4 text-center">
-                <img src="img/analytics.png" alt="Anti-spam" style="width: 20%" class="mx-auto">
-                <h4>Monitoramento</h4>
-                <p>Acompanhe o desempenho dos seus banners diretamente sem precisar acessar o Google Analytics.</p>
-            </div>
-            <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000" data-aos-once="true" class="col-md-4 text-center">
-                <img src="img/stopwatch.png" alt="Smart Scan" style="width: 20%" class="mx-auto">
-                <h4>Fácil configuração</h4>
-                <p>Instale o plugin para Wordpress e publique seus banners com <strong>poucos cliques</strong>.</p>
-            </div>
-        </div>
-    </div>
-    <!-- feature (skew background) -->
-    <div class="jumbotron jumbotron-fluid feature" id="feature-first">
-        <div class="container my-5">
-            <div class="row justify-content-between text-center text-md-left">
-                <div data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" class="col-md-6">
-                    <h2 class="font-weight-bold">Gere mais leads</h2>
-                    <p class="my-4">O Rock Convert te ajuda a criar e gerenciar seus banners<br/> para que aumente suas conversões.</p>
-                    <a href="https://wordpress.org/plugins/rock-convert/" data-ga-cta data-ga-action="Click" data-ga-label="Instalar Agora" class="btn my-4 font-weight-bold atlas-cta cta-rock">Instalar Agora</a>
-                </div>
-                <div data-aos="fade-left" data-aos-duration="1000" data-aos-once="true" class="col-md-6 align-self-center">
-                    <img src="img/undraw_people_search_wctu.svg" alt="Take a look inside" class="mx-auto d-block">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- feature (green background) -->
-    <div class="jumbotron jumbotron-fluid feature" id="feature-last">
-        <div class="container">
-            <div class="row justify-content-between text-center text-md-left">
-                <div data-aos="fade-left" data-aos-duration="1000" data-aos-once="true" class="col-md-6 flex-md-last">
-                    <h2 class="font-weight-bold">Aumente suas vendas</h2>
-                    <p class="my-4">
-                        Sites que usam o Rock Convert vendem em média <strong>34%</strong> mais dos que os que não possuem uma ferramenta para gerenciar banners.
-                    </p>
-                    <a href="https://wordpress.org/plugins/rock-convert/" data-ga-cta data-ga-action="Click" data-ga-label="Quero Vender Mais" class="btn my-4 font-weight-bold atlas-cta cta-rock">Quero Vender Mais</a>
-                </div>
-                <div data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" class="col-md-6 align-self-center flex-md-first">
-                    <img src="img/undraw_dashboard_nklg.svg" alt="Safe and reliable" class="mx-auto d-block">
-                </div>
-            </div> 
-        </div>
-    </div>
-    <div class="container my-5 py-2">
-        <h2 class="text-center font-weight-bold my-5">Receba as novidades</h2>
-        <p class="text-center my-5"><strong>Junte-se a milhares de pessoas</strong> e receba as últimas novidades sobre o Rock Convert direto no seu e-mail:
-
-        </p>
-
-<div class="row">
-            <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-once="true" class="col-md-12 text-center">
-                <form action="https://www.rdstation.com.br/api/1.2/conversions" method="POST">
-                    <input type="hidden" name="token_rdstation" value="e58085419f764dbdaf17ac942334b0fc" />
-                    <input type="hidden" name="identificador" value="rock-convert" />
-                    <input type="hidden" name="redirect_to" value="https://convert.rockcontent.com/obrigado" />
-                    <div class="row">
-                        <div class="form-group col-md-7 text-left">
-                            <label for="Email">E-mail</label>
-                            <input style="height: 50px" name="email" type="email" class="form-control" id="Email" placeholder="Digite seu e-mail">
+                <div class="testimonial text-center text-xs is-revealing">
+                  <div class="testimonial-inner">
+                    <div class="testimonial-main">
+                      <div class="testimonial-header">
+                        <img class="mb-16" src="dist/images/fabio.jpg" alt="Fábio Miranda" />
+                      </div>
+                      <div class="testimonial-body">
+                        <p>
+                          O Rock Convert com certeza é o melhor plugin de WordPress para
+                          conversões. Além de facilitar todo o trabalho de qualquer time
+                          de Marketing, é bem robusto e fácil de usar. Recomendo!!
+                        </p>
+                      </div>
+                    </div>
+                    <div class="testimonial-footer">
+                      <div class="testimonial-name">Fábio Miranda</div>
+                      <div class="testimonial-link">
+                        <div class="testimonial-role">Gerente de Marketing da iClips</div>
+                        <div class="testimonial-result">
+                          <div class="testimonial-number">+42%</div>
+                          <div class="testimonial-subnumber">aumento de conversão</div>
                         </div>
-                        <div class="form-group col-md-5 text-left">
-                        <button style="margin-top: 7%" type="submit" class="btn font-weight-bold atlas-cta atlas-cta-wide cta-rock">Inscrever</button>
+                      </div>
                     </div>
-                    </div>
-                </form>
+                  </div>
+                </div>
+              </div>
             </div>
-        </div>
-    </div>
-    
-	<!-- copyright -->
-	<div class="jumbotron jumbotron-fluid" id="copyright">
+          </div>
+        </section>
+
+        <section class="pricing section">
+          <div class="container">
+            <div class="pricing-inner section-inner text-center">
+              <h2 class="section-title m-0">
+                Economize <strong class="color-secondary">milhares</strong> de reais <br>
+                enquanto você cresce
+              </h2>
+              <div class="pricing-tables-wrap">
+                <div class="pricing-table pricing-table-primary is-revealing">
+                  <div class="pricing-table-inner free-item">
+                    <div class="pricing-table-main">
+                      <div class="pricing-table-header">
+                        <div class="pricing-table-title mt-12 mb-16">
+                          <svg class="icon" fill="#FFF" height="34" viewBox="0 0 214 200" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M116.13 77H95v73.245h21.13zM74.139 149.585V103h-9.612C58.167 103 53 108.108 53 114.417v23.751c0 6.301 5.167 11.417 11.527 11.417h9.612zM137 149.919V50h9.612c6.36 0 11.527 5.108 11.527 11.417v77.084c0 6.302-5.167 11.418-11.527 11.418H137z" />
+                            <path d="M129.333 21.124c-24.084 0 0-.088 0-.088H83.756s24.085.088 0 .088c-57.381 0-57.212 34.465-57.212 78.756 0 44.292-.17 78.945 57.212 78.945h45.577c57.383 0 57.214-34.653 57.214-78.945 0-44.29.169-78.756-57.214-78.756M133.357 200H79.903C26.544 200 0 167.216 0 99.88 0 32.544 26.544 0 79.903 0h53.454c53.359 0 79.903 32.544 79.903 99.88S186.716 200 133.357 200" />
+                          </svg>
+                          Rock Convert
+                          <span class="pricing-table-price">
+                            <span class="pricing-table-price-currency h3">R$</span>
+                            <span class="pricing-table-price-amount h1">0</span>/mês
+                          </span>
+                        </div>
+                      </div>
+                      <ul class="pricing-table-features list-reset">
+                        <li><span>Barra de anúncios</span></li>
+                        <li>
+                          <span>Integração MailChimp</span>
+                          <span class="tooltip" data-tooltip="RD Station e HupSpot estão disponíveis no plano Premium">
+                            <svg class="icon-info" fill="#fff" xmlns="http://www.w3.org/2000/svg" width="16" viewBox="0 0 45.999 45.999">
+                              <path d="M39.264 6.736c-8.982-8.981-23.545-8.982-32.528 0-8.982 8.982-8.981 23.545 0 32.528 8.982 8.98 23.545 8.981 32.528 0 8.981-8.983 8.98-23.545 0-32.528zM25.999 33a3 3 0 1 1-6 0V21a3 3 0 1 1 6 0v12zm-3.053-17.128c-1.728 0-2.88-1.224-2.844-2.735-.036-1.584 1.116-2.771 2.879-2.771 1.764 0 2.88 1.188 2.917 2.771-.001 1.511-1.152 2.735-2.952 2.735z"/>
+                            </svg>
+                          </span>
+                        </li>
+                        <li><span>Gerenciador de banners</span></li>
+                        <li><span>Formulário de newsletter</span></li>
+                        <li><span>Analytics</span></li>
+                        <li><span>Download de conteúdos</span></li>
+                      </ul>
+                    </div>
+                    <div class="circle-vs is-revealing">
+                      <span class="letters">VS</span>
+                    </div>
+                  </div>
+                  <div class="pricing-table-footer">
+                    <div class="h3">Gratuito</div>
+                    Todas as funcionalidade em <br> uma única ferramenta.
+                  </div>
+                </div>
+                <div class="pricing-table table-competitors is-revealing">
+                  <div class="pricing-table-inner table-competitor-item">
+                    <div class="pricing-table-main">
+                      <div class="pricing-table-header">
+                        <div class="pricing-table-title mt-12 mb-16">
+                          <svg class="icon" width="34" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="#E8552B" d="M0 0h24v24H0z" />
+                            <path stroke="#FFF" stroke-width="1.134" stroke-linecap="square" d="M3 9h7.515H3zm10.485 0H21h-7.515zm0 7H21h-7.515zM3 16h7.515H3zm3.849 0V9v7zm10.484-7v7-7zM6.85 12.31h10.484H6.85z" />
+                          </svg>
+                          <span>
+                            Hello Bar
+                            <div class="pricing-table-subtitle">
+                              Barra de anúncio
+                            </div>
+                          </span>
+                          <span class="pricing-table-price">
+                            <span class="pricing-table-price-currency h4">R$</span>
+                            <span class="pricing-table-price-amount h2">108</span>/mês
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pricing-table-inner table-competitor-item">
+                    <div class="pricing-table-main">
+                      <div class="pricing-table-header">
+                        <div class="pricing-table-title mt-12 mb-16">
+                          <img src="src/images/mailchimpforwp.png" alt="MailChimp for Wordpress"
+                            class="icon" width="34" height="34">
+                          <span>
+                            MailChimp for WP
+                            <div class="pricing-table-subtitle">
+                              Integração
+                            </div>
+                          </span>
+                          <span class="pricing-table-price">
+                            <span class="pricing-table-price-currency h4">R$</span>
+                            <span class="pricing-table-price-amount h2">219</span>/mês
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pricing-table-inner table-competitor-item">
+                    <div class="pricing-table-main">
+                      <div class="pricing-table-header">
+                        <div class="pricing-table-title mt-12 mb-16">
+                          <img src="src/images/adspro.png" alt="Ads Pro Plugin"
+                            class="icon" width="34" height="34">
+                          <span>
+                            Ads Pro Plugin
+                            <div class="pricing-table-subtitle">
+                              Gerenciador de banners
+                            </div>
+                          </span>
+                          <span class="pricing-table-price">
+                            <span class="pricing-table-price-currency h4">R$</span>
+                            <span class="pricing-table-price-amount h2">175</span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pricing-table-inner table-competitor-item last-item">
+                    <div class="pricing-table-main">
+                      <div class="pricing-table-header">
+                        <div class="pricing-table-title mt-12 mb-16">
+                          <svg class="icon" height="34" viewBox="0 0 29 32" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="#93A2B3" d="M9.125 30.75c0 .69-.56 1.25-1.25 1.25H5c-2.757 0-5-2.243-5-5V5c0-2.757 2.243-5 5-5h15.368c2.757 0 5 2.243 5 5v7.438a1.25 1.25 0 0 1-2.5 0V5c0-1.378-1.121-2.5-2.5-2.5H5A2.503 2.503 0 0 0 2.5 5v22c0 1.378 1.122 2.5 2.5 2.5h2.875c.69 0 1.25.56 1.25 1.25zm11.243-22c0-.69-.56-1.25-1.25-1.25H6.243a1.25 1.25 0 0 0 0 2.5h12.875c.69 0 1.25-.56 1.25-1.25zm-4.993 5c0-.69-.56-1.25-1.25-1.25H6.243a1.25 1.25 0 0 0 0 2.5h7.882c.69 0 1.25-.56 1.25-1.25zM6.243 17.5a1.25 1.25 0 0 0 0 2.5h5.194a1.25 1.25 0 1 0 0-2.5H6.244zM28.05 31.07c-.481.591-1.191.93-1.948.93H13.897a2.527 2.527 0 0 1-2.468-3.046 8.806 8.806 0 0 1 3.01-4.984 8.72 8.72 0 0 1 1.902-1.193 4.853 4.853 0 0 1-1.216-3.217A4.88 4.88 0 0 1 20 14.685a4.88 4.88 0 0 1 4.875 4.875c0 1.232-.46 2.358-1.216 3.217a8.71 8.71 0 0 1 1.901 1.193 8.81 8.81 0 0 1 2.986 4.867c.01.033.018.066.026.1a2.547 2.547 0 0 1-.521 2.133zM17.625 19.56A2.378 2.378 0 0 0 20 21.935a2.378 2.378 0 0 0 2.375-2.375A2.378 2.378 0 0 0 20 17.185a2.378 2.378 0 0 0-2.375 2.375zm8.5 9.905l-.001-.003c-.6-2.89-3.176-4.99-6.124-4.99-2.948 0-5.524 2.1-6.124 4.99-.005.028.014.037.014.038h12.213c.001 0 .018-.013.021-.035z" />
+                          </svg>
+                          <span>
+                            Contact Form 7
+                            <div class="pricing-table-subtitle">
+                              Formulário de newsletter
+                            </div>
+                          </span>
+                          <span class="pricing-table-price">
+                            <span class="pricing-table-price-currency h4">R$</span>
+                            <span class="pricing-table-price-amount h2">0</span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pricing-table-footer">
+                    <div class="h5 mt-32">
+                      <span class="pricing-table-price-currency h4">R$</span>
+                      <span class="pricing-table-price-amount h2">327</span>
+                      /mês
+                    </div>
+                    Aproximadamente <strong>R$2.950</strong>
+                    <span data-tooltip="Valor calculado por blog e meses">*</span>
+                    <br> por ano.
+                    <img class="pricing-table-emoji" width="22" height="22"
+                      src="src/images/emoji.png" alt="Emoji Surpreso">
+                  </div>
+                </div>
+              </div>
+              <form action="https://www.rdstation.com.br/api/1.2/conversions" method="POST"
+                class="cta-form field field-grouped">
+                <input type="hidden" name="token_rdstation" value="e58085419f764dbdaf17ac942334b0fc" />
+                <input type="hidden" name="identificador" value="rock-convert" />
+                <input type="hidden" name="redirect_to" value="https://wordpress.org/plugins/rock-convert/" />
+                <div class="control control-expanded">
+                  <input class="input" type="email" name="email" required
+                    placeholder="Digite seu email" />
+                </div>
+                <div class="control">
+                  <button data-ga-cta data-ga-action="Click" data-ga-label="Comecar Agora"
+                    class="button button-primary">
+                    Começar agora
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section-example">
+          <h2 class="section-title text-center mb-40">
+            Transforme seu WordPress em <br> uma máquina de conversão
+          </h2>
+          <svg class="image-example" width="100%" height="100%" viewBox="0 0 1058 708" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <defs>
+              <linearGradient x1="0%" y1="138.002%" x2="46.694%" y2="37.53%" id="c">
+                <stop stop-color="#EEF1FA" offset="0%" />
+                <stop stop-color="#FFF" offset="100%" />
+              </linearGradient>
+              <rect id="b" x="97" y="47" width="800" height="597" rx="5.644" />
+              <filter x="-6.5%" y="-4.9%" width="113%" height="117.4%" filterUnits="objectBoundingBox" id="a">
+                <feOffset dy="23" in="SourceAlpha" result="shadowOffsetOuter1" />
+                <feGaussianBlur stdDeviation="13.5" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
+                <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.08 0" in="shadowBlurOuter1" />
+              </filter>
+              <linearGradient x1="100%" y1="-12.816%" x2="0%" y2="-12.816%" id="d">
+                <stop stop-color="#D2DAF0" stop-opacity="0" offset="0%" />
+                <stop stop-color="#D2DAF0" offset="50.045%" />
+                <stop stop-color="#D2DAF0" stop-opacity="0" offset="100%" />
+              </linearGradient>
+            </defs>
+            <g fill="none" fill-rule="evenodd">
+              <path d="M.486 291.353C19.11 540.993 266.9 631.588 458.581 683.755c191.683 52.167 229.806 18.97 244.513-88.21 14.707-107.178 101.581-170.727 298.394-195.388 196.813-24.66-170.777-311.709-334.45-378.479C503.365-45.092-18.137 41.711.486 291.353z" fill="#F4F7FE" fill-rule="nonzero" />
+              <g fill-rule="nonzero" transform="translate(33 0)">
+                <use fill="#000" filter="url(#a)" xlink:href="#b" />
+                <use fill="url(#c)" xlink:href="#b" />
+                <circle fill="#D2DAF0" fill-rule="nonzero" cx="122.5" cy="67.5" r="5.5" />
+                <circle fill="#D2DAF0" fill-rule="nonzero" cx="144.5" cy="67.5" r="5.5" />
+                <circle fill="#D2DAF0" fill-rule="nonzero" cx="167.5" cy="67.5" r="5.5" />
+                <path fill="#00C28E" d="M97 87h800v56H97z" />
+                <path fill="url(#d)" fill-rule="nonzero" d="M97 84h800v3H97z" />
+                <path d="M176.287 222h642.426c6.233 0 11.287 5.054 11.287 11.287v91.426c0 6.233-5.054 11.287-11.287 11.287H176.287c-6.233 0-11.287-5.054-11.287-11.287v-91.426c0-6.233 5.054-11.287 11.287-11.287zM660.287 539h158.426c6.233 0 11.287 5.054 11.287 11.287v29.426c0 6.233-5.054 11.287-11.287 11.287H660.287c-6.233 0-11.287-5.054-11.287-11.287v-29.426c0-6.233 5.054-11.287 11.287-11.287z" fill="#EEF1FA" fill-rule="nonzero" />
+                <path d="M657 383h165a8 8 0 0 1 8 8v124a8 8 0 0 1-8 8H657a8 8 0 0 1-8-8V391a8 8 0 0 1 8-8z" fill="#00C28E" fill-rule="nonzero" />
+                <rect fill="#EEF1FA" fill-rule="nonzero" x="745" y="177" width="34" height="11" rx="5.5" />
+                <rect fill="#EEF1FA" fill-rule="nonzero" x="165" y="383" width="268" height="11" rx="5.5" />
+                <rect fill="#EEF1FA" fill-rule="nonzero" x="165" y="434" width="80" height="11" rx="5.5" />
+                <rect fill="#EEF1FA" fill-rule="nonzero" x="165" y="580" width="80" height="11" rx="5.5" />
+                <rect fill="#EEF1FA" fill-rule="nonzero" x="546" y="434" width="54" height="11" rx="5.5" />
+                <rect fill="#EEF1FA" fill-rule="nonzero" x="546" y="580" width="54" height="11" rx="5.5" />
+                <rect fill="#EEF1FA" fill-rule="nonzero" x="332" y="409" width="268" height="11" rx="5.5" />
+                <rect fill="#EEF1FA" fill-rule="nonzero" x="332" y="555" width="268" height="11" rx="5.5" />
+                <rect fill="#EEF1FA" fill-rule="nonzero" x="450" y="383" width="150" height="11" rx="5.5" />
+                <rect fill="#EEF1FA" fill-rule="nonzero" x="261" y="434" width="268" height="11" rx="5.5" />
+                <rect fill="#EEF1FA" fill-rule="nonzero" x="261" y="580" width="268" height="11" rx="5.5" />
+                <rect fill="#00C28E" fill-rule="nonzero" x="165" y="464" width="435" height="73" rx="8" />
+                <rect fill="#EEF1FA" fill-rule="nonzero" x="165" y="409" width="150" height="11" rx="5.5" />
+                <rect fill="#EEF1FA" fill-rule="nonzero" x="165" y="555" width="150" height="11" rx="5.5" />
+                <rect fill="#EEF1FA" fill-rule="nonzero" x="216" y="177" width="34" height="11" rx="5.5" />
+                <rect fill="#EEF1FA" fill-rule="nonzero" x="165" y="166" width="34" height="34" rx="16.931" />
+                <rect fill="#EEF1FA" fill-rule="nonzero" x="796" y="177" width="34" height="11" rx="5.5" />
+                <text font-family="OpenSans-Bold, Open Sans" font-size="14" font-weight="bold" fill="#FFF">
+                  <tspan x="185" y="120"> Anuncie a venda ou promoção com campo de email ou botão
+                  </tspan>
+                </text>
+                <rect fill="#FFF" x="632" y="98" width="178" height="34" rx="5" />
+                <text opacity=".7" font-family="OpenSans-Bold, Open Sans" font-size="12" font-weight="bold" fill="#00C28E">
+                  <tspan x="648" y="119">nome@gmail.com</tspan>
+                </text>
+                <path d="M800.284 114.993a.678.678 0 0 1-.411.667l-16.869 7.285c-.286.108-.59.054-.788-.144l-.018-.018c-.214-.253-.25-.577-.107-.83l3.635-6.942-3.653-6.96c-.125-.271-.09-.632.108-.83.197-.199.537-.289.805-.163l16.887 7.268c.25.108.411.342.411.667z" fill="#00C28E" fill-rule="nonzero" />
+                <text font-family="OpenSans-Bold, Open Sans" font-size="14" font-weight="bold" fill="#FFF">
+                  <tspan x="681.036" y="436">Caixa de captura</tspan>
+                </text>
+                <text font-family="OpenSans-Bold, Open Sans" font-size="14" font-weight="bold" fill="#FFF">
+                  <tspan x="306.17" y="506">Banner personalizado</tspan>
+                </text>
+                <rect fill="#FFF" x="660" y="478" width="159" height="34" rx="5" />
+                <text opacity=".7" font-family="OpenSans-Bold, Open Sans" font-size="12" font-weight="bold" fill="#00C28E">
+                  <tspan x="672" y="499">nome@gmail.com</tspan>
+                </text>
+                <path d="M809.999 494.994a.593.593 0 0 1-.36.583l-14.76 6.375c-.251.095-.517.047-.69-.126l-.015-.016c-.188-.22-.22-.505-.094-.726l3.18-6.075-3.196-6.09c-.11-.237-.078-.552.094-.726.172-.174.47-.252.705-.142l14.776 6.359c.219.094.36.3.36.584z" fill="#00C28E" fill-rule="nonzero" />
+                <path d="M868.65 116.5l5.112-5.112a.813.813 0 1 0-1.15-1.15l-5.112 5.113-5.112-5.113a.813.813 0 1 0-1.15 1.15l5.113 5.112-5.113 5.112a.813.813 0 1 0 1.15 1.15l5.112-5.113 5.112 5.113a.81.81 0 0 0 1.15 0 .813.813 0 0 0 0-1.15l-5.112-5.112z" fill="#FFF" fill-rule="nonzero" />
+              </g>
+            </g>
+          </svg>
+        </section>
+
+        <section class="faq section">
+          <div class="container">
+            <div class="section-inner">
+              <h2 class="section-title mt-0 text-center">FAQ</h2>
+              <div class="pricing-faqs container-sm mt-48">
+                  <ul class="accordion">
+                    <li>
+                      <div class="accordion-title">
+                        <span>Como instalar o plugin no meu WordPress?</span>
+                        <div class="accordion-icon"></div>
+                      </div>
+                      <div class="accordion-body">
+                        <p>
+                          O processo de instalação é simples. Entre no seu WordPress na
+                          aba Plugins e selecione <strong>Adicionar novo</strong>.
+                        </p>
+                        <p>
+                          Dentro da parte dos plugins, pesquise por Rock Convert e
+                          clique em <strong>Instalar agora</strong>.
+                        </p>
+                        <p>Após instalar, é só clicar em <strong>Ativar</strong>.</p>
+                        <p>
+                          <a href="https://ajuda.rockcontent.com/rock-convert/comecando/instalacao" target="_blank">
+                            Tutorial completo
+                          </a>
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="accordion-title">
+                        <span>Para quem é recomendado a versão Premium?</span>
+                        <div class="accordion-icon"></div>
+                      </div>
+                      <div class="accordion-body">
+                        <p>
+                          A versão é recomendada para quem possui <strong>RD Station</strong>
+                          ou <strong>HubSpot</strong> e deseja integrar os leads gerados
+                          com facilidade para impulsionar a estratégia de marketing.
+                        </p>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="accordion-title">
+                        <span>É possível integrar com outras ferramentas de automação?</span>
+                        <div class="accordion-icon"></div>
+                      </div>
+                      <div class="accordion-body">
+                        <p>
+                          Não. Para outras ferramentas, é possível exportar seus leads
+                          acessando o Rock Convert pela barra lateral do blog e em seguida
+                          clicar em <strong>Configurações</strong>.
+                        </p>
+                        <p>
+                          Após isso, na aba de Contatos, basta clicar no botão
+                          <strong>"Exportar no formato CSV"</strong> para baixar o arquivo
+                          e em seguida, basta importar na sua ferramenta.
+                        </p>
+                        <p>
+                          <a href="https://ajuda.rockcontent.com/rock-convert/avancado/exportando-contatos" target="_blank">
+                            Tutorial completo
+                          </a>
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
         <div class="container">
-            <div class="row justify-content-between">
-            	<div class="col-md-6 text-white align-self-center text-center text-md-left my-2">
-                    © 2013-2018 Rock Content. <br>Todos os direitos reservados · <a href="http://rockcontent.com/politica-de-privacidade/?utm_source=site&amp;utm_medium=footer" title="Política de Privacidade" style="color:#fff;">Política de Privacidade</a><br>
-Feito com ❤ no San Pedro Valley
-                </div>
-                <div class="col-md-6 align-self-center text-center text-md-right my-2" id="social-media">
-                    <a href="https://www.facebook.com/werockcontent/" class="d-inline-block text-center ml-2">
-                    	<i class="fa fa-facebook" aria-hidden="true"></i>
-                    </a>
-                    <a href="https://www.instagram.com/rockcontent/" class="d-inline-block text-center ml-2">
-                        <i class="fa fa-instagram" aria-hidden="true"></i>
-                    </a>
-                    <a href="https://twitter.com/rockcontent" class="d-inline-block text-center ml-2">
-                    	<i class="fa fa-twitter" aria-hidden="true"></i>
-                    </a>
-                    <a href="https://medium.com/experience-valley" class="d-inline-block text-center ml-2">
-                    	<i class="fa fa-medium" aria-hidden="true"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/company/rock-content/" class="d-inline-block text-center ml-2">
-                    	<i class="fa fa-linkedin" aria-hidden="true"></i>
-                    </a>
-                </div>
+          <div class="site-footer-inner">
+            <div class="brand footer-brand">
+              <svg fill="#FFF" height="42" viewBox="0 0 949 201" xmlns="http://www.w3.org/2000/svg">
+                <path d="M317.809 153.667c-30.231 0-44.226-17.167-44.226-48.703V90.381c0-32.097 13.995-48.518 44.226-48.518 16.048 0 27.617 2.426 32.469 3.918v18.662c-13.25-1.12-22.392-1.68-28.177-1.68-15.302 0-23.886 4.852-23.886 27.618v14.583c0 22.577 8.584 27.804 23.886 27.804 5.785 0 14.928-.56 28.177-1.68v18.66c-4.852 1.307-16.421 3.919-32.47 3.919M653.617 153.667h-34.895L586.066 44.609h25.751l17.168 63.899c2.8 9.89 5.04 19.593 7.465 28.552 2.24-8.959 4.292-18.475 7.09-28.552l16.982-63.899h25.751l-32.656 109.058zM765.466 88.355c0-12.129-2.425-25.378-22.765-25.378-19.78 0-22.766 13.436-22.766 25.378v1.68h45.531v-1.68zm-45.717 17.728v1.864c0 15.303 2.24 25.194 27.99 25.194 11.01 0 24.072-1.12 37.88-2.427v18.473c-7.837 1.867-21.458 4.48-39 4.48-37.88 0-51.316-14.556-51.316-51.504v-6.53c0-35.268 16.048-52.436 47.398-52.436 35.081 0 47.398 22.766 47.398 54.674v8.212h-70.35zM117.128 150.475h-21.13V77.229h21.13zM74.867 103.897v46.585h-9.612c-6.36 0-11.527-5.108-11.527-11.417v-23.751c0-6.301 5.167-11.417 11.527-11.417h9.612zM138.375 50.563v99.919h9.612c6.36 0 11.527-5.108 11.527-11.417V61.98c0-6.302-5.167-11.418-11.527-11.418h-9.612z" />
+                <path d="M130.044 179.21c-24.084 0 0 .088 0 .088H84.466s24.086-.088 0-.088c-57.381 0-57.212-34.466-57.212-78.756 0-44.292-.17-78.946 57.212-78.946h45.578c57.382 0 57.213 34.654 57.213 78.946 0 44.29.17 78.756-57.213 78.756M134.068.334H80.613C27.254.334.71 33.118.71 100.454c0 67.336 26.544 99.88 79.903 99.88h53.455c53.358 0 79.902-32.544 79.902-99.88S187.426.334 134.068.334M927.25 153.635c-20.712 0-28.923-8.274-28.923-30.458V64.895l-19.594-1.69V44.966h19.594V4.333h24.631v40.634h25.565v19.928h-25.565V122.8c0 9.778.747 11.656 9.705 11.656 5.411 0 12.875-.376 15.86-.752v16.922c-2.8.752-11.942 3.008-21.273 3.008M834.512 71.475v82.006h-24.446V44.967h23.326v8.647c9.889-8.835 22.765-11.279 35.828-11.279V65.084c-12.688 0-26.684 2.631-34.708 6.391M552.204 153.48V83.696c0-15.228-2.613-20.49-14.742-20.49-7.091 0-16.422 2.632-27.618 7.142v83.134H485.4V44.967h23.512v8.46c11.383-6.581 22.765-11.092 34.523-11.092 29.67 0 33.588 17.296 33.588 41.36v69.786h-24.818zM440.92 91.321c0-20.343-6.907-27.877-22.96-27.877-15.867 0-22.96 7.534-22.96 27.877v12.996c0 20.343 6.906 28.065 22.96 28.065 16.053 0 22.96-7.722 22.96-28.065V91.321zm-22.96 62.345c-30.614 0-47.414-15.821-47.414-49.349V91.321c0-33.34 16.8-49.163 47.413-49.163 30.614 0 47.414 15.823 47.414 49.163v12.996c0 33.528-16.8 49.35-47.414 49.35z" />
+              </svg>
             </div>
+            <ul class="footer-links list-reset">
+              <li>
+                <a href="http://rockcontent.com/politica-de-privacidade/?utm_source=site&utm_medium=footer"
+                  target="_blank">
+                  Política de Privacidade
+                </a>
+              </li>
+            </ul>
+            <ul class="footer-social-links list-reset">
+              <li>
+                <a href="https://www.facebook.com/werockcontent/" aria-label="Facebook" target="_blank" rel="noopener">
+                  <svg fill="#FFF" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M30.232 0H1.768C.792 0 0 .792 0 1.768v28.464C0 31.208.792 32 1.768 32h15.327V19.65h-4.183v-4.868h4.16v-3.554c0-4.137 2.521-6.389 6.21-6.389 1.252.004 2.504.075 3.75.214V9.37h-2.55c-2.003 0-2.39.949-2.39 2.346v3.088h4.8l-.624 4.845h-4.177V32h8.14c.977 0 1.769-.792 1.769-1.768V1.768C32 .792 31.208 0 30.232 0z" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/rockcontent" aria-label="Twitter" target="_blank" rel="noopener">
+                  <svg fill="#FFF" width="32" height="26" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.063 26.002c12.076 0 18.68-10.005 18.68-18.68 0-.285 0-.567-.019-.85A13.358 13.358 0 0 0 32 3.076c-1.198.53-2.47.879-3.77 1.032a6.588 6.588 0 0 0 2.886-3.63 13.157 13.157 0 0 1-4.17 1.593 6.572 6.572 0 0 0-11.188 5.988 18.64 18.64 0 0 1-13.53-6.86A6.57 6.57 0 0 0 4.26 9.962a6.516 6.516 0 0 1-2.98-.822v.084a6.568 6.568 0 0 0 5.267 6.435 6.555 6.555 0 0 1-2.964.113 6.573 6.573 0 0 0 6.133 4.56A13.174 13.174 0 0 1 0 23.051a18.587 18.587 0 0 0 10.063 2.945" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/company/rock-content/" aria-label="LinkedIn" target="_blank" rel="noopener">
+                  <svg fill="#FFF" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M27.27 27.268h-4.747v-7.427c0-1.77-.03-4.049-2.466-4.049-2.47 0-2.847 1.93-2.847 3.923v7.553h-4.74V11.997h4.55v2.088h.065c.633-1.201 2.181-2.467 4.49-2.467 4.806 0 5.694 3.162 5.694 7.275v8.375zM7.117 9.91a2.751 2.751 0 0 1-2.753-2.752 2.751 2.751 0 1 1 5.504 0 2.752 2.752 0 0 1-2.75 2.752zM4.741 27.268h4.752V11.997H4.74v15.271zM29.633 0H2.36C1.058 0 0 1.033 0 2.308V29.69c0 1.275 1.058 2.31 2.36 2.31h27.273C30.938 32 32 30.966 32 29.69V2.308C32 1.033 30.938 0 29.633 0z" fill-rule="evenodd" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/rockcontent/" aria-label="Instagram" target="_blank" rel="noopener">
+                  <svg fill="#FFF" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.995 0C11.651 0 11.106.018 9.4.096 7.698.174 6.535.444 5.518.84a7.84 7.84 0 0 0-2.833 1.845A7.84 7.84 0 0 0 .84 5.518C.444 6.535.174 7.698.096 9.4.018 11.106 0 11.651 0 15.995c0 4.344.018 4.889.096 6.595.078 1.702.348 2.865.744 3.882a7.84 7.84 0 0 0 1.845 2.833 7.841 7.841 0 0 0 2.833 1.845c1.017.396 2.18.666 3.882.744 1.706.077 2.251.096 6.595.096 4.344 0 4.889-.019 6.595-.096 1.702-.078 2.865-.348 3.882-.744a7.841 7.841 0 0 0 2.833-1.845 7.841 7.841 0 0 0 1.845-2.833c.396-1.017.666-2.18.744-3.882.077-1.706.096-2.251.096-6.595 0-4.344-.019-4.889-.096-6.595-.078-1.702-.348-2.865-.744-3.882a7.841 7.841 0 0 0-1.845-2.833A7.84 7.84 0 0 0 26.472.84C25.455.444 24.292.174 22.59.096 20.884.018 20.339 0 15.995 0zm0 2.882c4.27 0 4.777.016 6.463.093 1.56.071 2.407.332 2.97.551.747.29 1.28.637 1.84 1.196.56.56.906 1.093 1.196 1.84.219.563.48 1.41.55 2.97.078 1.686.094 2.192.094 6.463 0 4.27-.016 4.777-.093 6.463-.071 1.56-.332 2.407-.551 2.97a4.955 4.955 0 0 1-1.197 1.84c-.56.56-1.092.906-1.839 1.196-.563.219-1.41.48-2.97.55-1.686.078-2.192.094-6.463.094s-4.777-.016-6.463-.093c-1.56-.071-2.407-.332-2.97-.551a4.955 4.955 0 0 1-1.84-1.197 4.956 4.956 0 0 1-1.196-1.839c-.22-.563-.48-1.41-.55-2.97-.078-1.686-.094-2.192-.094-6.463 0-4.27.016-4.777.093-6.463.071-1.56.332-2.407.551-2.97.29-.747.637-1.28 1.196-1.84a4.955 4.955 0 0 1 1.84-1.196c.563-.22 1.41-.48 2.97-.55 1.686-.078 2.192-.094 6.463-.094z" />
+                    <path d="M16.023 21.291a5.332 5.332 0 1 1 0-10.663 5.332 5.332 0 0 1 0 10.663zm0-13.545a8.214 8.214 0 1 0 0 16.427 8.214 8.214 0 0 0 0-16.427zM26.442 7.443a1.92 1.92 0 1 1-3.839 0 1.92 1.92 0 0 1 3.839 0" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="https://medium.com/rock-convert" aria-label="Medium" target="_blank" rel="noopener">
+                  <svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#FFF" d="M0 0h32v32H0V0zm7.636 10.702v9.502c.059.342-.05.693-.29.943l-2.259 2.739v.361h6.403v-.361l-2.258-2.74a1.134 1.134 0 0 1-.311-.942v-8.218l5.62 12.261h.653l4.827-12.26v9.772c0 .26 0 .31-.17.481l-1.737 1.686v.361h8.43v-.361l-1.676-1.645a.502.502 0 0 1-.19-.482V9.709a.502.502 0 0 1 .19-.482l1.717-1.645V7.22h-5.942l-4.235 10.565L11.591 7.22H5.358v.36L7.365 10a.833.833 0 0 1 .271.702z" fill-rule="nonzero" />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+            <div class="footer-copyright">
+              &copy; 2019 Rock Convert - Todos os direitos reservados
+            </div>
+          </div>
         </div>
+      </footer>
     </div>
-    <!-- AOS -->
-    <script src="js/aos.js"></script>
-    <script>
-      AOS.init({
-      });
-    </script>
-<script>window.chorusAnalytics_blogName = 'Rock Convert'</script>
-<script src="https://d3fvet2f19dmip.cloudfront.net/stage.js" async="async"></script>
 
-<script
-  src="https://code.jquery.com/jquery-1.12.4.min.js"
-  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
-  crossorigin="anonymous"></script>
-<script>
-  (function($) {
-    $(document).on("click", "[data-ga-cta]", function () {
-        var e = $(this).data("ga-action"),
-            t = $(this).data("ga-label");
-        window.dataLayer.push({
-            event: "gaEvent",
-            eventCategory: "CTA",
-            eventAction: e,
-            eventLabel: t.replace("</br>", " ")
-        })
-    });
-  })(jQuery);
-</script>
-
-</body>
-
+    <script src="dist/js/main.min.js"></script>
+    <script>window.chorusAnalytics_blogName = 'Rock Convert'</script>
+    <script src="https://d3fvet2f19dmip.cloudfront.net/stage.js" async="async"></script>
+  </body>
 </html>

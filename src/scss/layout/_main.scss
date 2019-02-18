@@ -1,0 +1,101 @@
+.is-boxed {
+  background: color(bg, 2);
+}
+
+.body-wrap {
+  background: color(bg, 1);
+  overflow: hidden;
+  /* Sticky footer */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.boxed-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  @include shadow;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.section-inner {
+  position: relative; /* To always display inner elements above pseudo decorative stuff */
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.color-secondary {
+  color: color(secondary, 3);
+}
+.color-primary {
+  color: color(primary, 3);
+}
+
+.control {
+  .input {
+    @include font-size(6, mobile, true, false, true);
+    @if (get-font-size(6, desktop) != get-font-size(6, mobile)) {
+      @include media('>medium') {
+        @include font-size(6, desktop, true, false, true);
+      }
+    }
+    padding: 16px 18px;
+    height: 48px;
+    border: 1px solid #D2DAF0;
+    transition: box-shadow .3s ease;
+    border-radius: 2px;
+    -webkit-appearance: none;
+    &:focus {
+      outline: none;
+      box-shadow: inset 0 0 0 2px color(primary, 1);
+    }
+  }
+}
+
+.cta-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  .input {
+    width: 100%;
+  }
+  .button {
+    font-size: 16px;
+    width: 100%;
+    margin-top: 12px;
+  }
+}
+
+.image-example {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1058px;
+}
+.section-example {
+  display: none;
+}
+
+@include media('>medium') {
+  .section-example {
+    display: block;
+  }
+  .section-inner {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  .cta-form {
+    flex-direction: row;
+    .button {
+      border-radius: 0 4px 4px 0;
+      width: auto;
+      margin-top: 0;
+    }
+    .input {
+      width: auto;
+      width: 300px;
+    }
+  }
+}

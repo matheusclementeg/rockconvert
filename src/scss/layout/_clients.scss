@@ -1,0 +1,38 @@
+.clients {
+  .section-inner {
+    padding-top: 60px;
+    padding-bottom: 30px;
+  }
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 24px;
+  }
+  li + li {
+    padding-top: 32px;
+  }
+}
+
+@include media('>medium') {
+  .clients {
+    .section-title {
+      margin: 0 120px 16px;
+    }
+    .section-inner {
+      padding-top: 80px;
+      padding-bottom: 40px;
+    }
+    ul {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    li {
+      width: auto;
+      + li {
+        padding: 0;
+      }
+    }
+  }
+}
