@@ -104,13 +104,17 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
+      text-align: center;
     }
     .cta-words {
       font-size: 18px;
+      line-height: 24px;
     }
     .button {
-      margin-left: 32px;
+      margin-top: 24px;
       font-size: 16px;
+      width: 100%;
     }
     &::after {
       content: none;
@@ -258,6 +262,17 @@
     left: auto;
     right: -40px;
     transform: translateY(-50%);
+  }
+  .pricing-table-inner.cta-premium {
+    .cta-premium-content {
+      flex-direction: row;
+      text-align: center;
+    }
+    .button {
+      margin-top: 0;
+      margin-left: 32px;
+      width: auto;
+    }
   }
 }
 

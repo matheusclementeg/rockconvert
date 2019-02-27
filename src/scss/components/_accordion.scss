@@ -20,6 +20,9 @@
   p {
     margin-top: 0;
   }
+  .mobile-block {
+    width: 100%;
+  }
 }
 
 .accordion-title {
@@ -91,5 +94,8 @@
 @include media('>medium') {
   .accordion {
     @include font-size(6, desktop, true, true, true);
+    .mobile-block {
+      width: auto;
+    }
   }
 }
