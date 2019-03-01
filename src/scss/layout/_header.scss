@@ -24,6 +24,21 @@
   align-items: center;
 }
 
+.icon-language {
+  display: flex;
+  align-items: center;
+  color: #1D2B4C;
+  transition: opacity ease .2s;
+  cursor: pointer !important;
+  .icon {
+    margin-right: 12px;
+  }
+  &:hover {
+    text-decoration: none;
+    opacity: 0.8;
+  }
+}
+
 .header-links {
   display: inline-flex;
 
