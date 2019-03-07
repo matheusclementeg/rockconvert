@@ -97,17 +97,26 @@
   }
 
   // GA
+  function sendGoogleAnalytics(action, label) {
+    window.dataLayer.push({
+      event: "gaEvent",
+      eventCategory: "CTA",
+      eventAction: action,
+      eventLabel: label,
+    })
+  }
   document.querySelectorAll('[data-ga-cta]').forEach(function(el) {
     const action = el.dataset.gaAction;
     const label = el.dataset.gaLabel;
-    el.addEventListener('click', function() {
-      window.dataLayer.push({
-        event: "gaEvent",
-        eventCategory: "CTA",
-        eventAction: action,
-        eventLabel: label,
+    if (el.closest('.send-ga')) {
+      el.closest('.send-ga').addEventListener('submit', function() {
+        sendGoogleAnalytics(action, label);
       })
-    })
+    } else {
+      el.addEventListener('click', function() {
+        sendGoogleAnalytics(action, label);
+      })
+    }
   });
 
   // Accordion component
